@@ -145,34 +145,36 @@ public class Login extends javax.swing.JFrame {
         String password = passwordField.getText();
         
         try {
-            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
             // Set up a connection to MSSQL
-            connection = DriverManager.getConnection(url);
+            connection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
 
             // Prepare and execute a SQL query to check the username and password
-            String query = "SELECT COUNT(*) FROM DonorLogin WHERE username = ? AND password = ?";
+            String query = "SELECT COUNT(*) FROM DonorTable WHERE name = ? AND password = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             statement.setString(2, password);
             ResultSet result = statement.executeQuery();
 
             // Check if the query returned a result, and if matches, return true
-            // If username and password match what was stored in the database, login will be successful
-            if (result.next()) {
-                JOptionPane.showMessageDialog(this, "Login Successful!");            
-            // If username and password do not match what was stored in the database, login will be unsuccessful
-            }else{
-                JOptionPane.showMessageDialog(this, "Invalid username or password.");
-            } 
-            connection.close();
+            if (result.next() && result.getInt(1) == 1) {
+                JOptionPane.showMessageDialog(this, "Log in successful!");
+                new MainMenu().setVisible(true);
+                this.dispose();
+            }
+            else {
+                JOptionPane.showMessageDialog(this, "Wrong username or password!");
+                usernameField.setText("");
+                passwordField.setText("");
+            }
         } catch (SQLException e) {
-            e.printStackTrace();
-        }    
-        
-
-        // If the query did not return a result or there was an error, return false
-        
-        
+            System.out.println("Error connecting to database: " + e.getMessage());
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("Error closing connection: " + e.getMessage());
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

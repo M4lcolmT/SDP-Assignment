@@ -49,7 +49,7 @@ public class MainLogin extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Blood Donor");
+        jButton1.setText("Customer");
         jButton1.setBorderPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,9 +60,7 @@ public class MainLogin extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 51, 0));
         jButton2.setText("Admin");
-        jButton2.setContentAreaFilled(false);
-
-        jButton2.setBorder(new LineBorder(Color.RED));
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 2));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 

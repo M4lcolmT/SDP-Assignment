@@ -82,27 +82,28 @@
                   <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jButton13" min="-2" pref="285" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jButton13" min="-2" pref="287" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="fourPM" max="32767" attributes="0"/>
-                                      <Component id="twoPM" pref="120" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="fourPM" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <Component id="twoPM" min="-2" pref="120" max="-2" attributes="0"/>
                                   <Component id="twelvePM" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                                   <Component id="tenAM" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="45" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="threePM" max="32767" attributes="0"/>
-                                  <Component id="fivePM" max="32767" attributes="0"/>
-                                  <Component id="elevenAM" max="32767" attributes="0"/>
-                                  <Component id="onePM" alignment="0" pref="122" max="32767" attributes="0"/>
+                                  <Component id="threePM" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <Component id="fivePM" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <Component id="elevenAM" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <Component id="onePM" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

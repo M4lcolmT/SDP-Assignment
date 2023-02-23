@@ -233,7 +233,7 @@ public class BloodCampaignDetails extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Raleway ExtraBold", 1, 14)); // NOI18N
         jLabel12.setText("Location: ");
 
-        jLabel13.setFont(new java.awt.Font("Raleway ExtraBold", 0, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel13.setText("Mid Valley ");
 
         jLabel14.setFont(new java.awt.Font("Raleway ExtraBold", 1, 14)); // NOI18N
@@ -328,7 +328,7 @@ public class BloodCampaignDetails extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(jLabel21))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(jLabel22))

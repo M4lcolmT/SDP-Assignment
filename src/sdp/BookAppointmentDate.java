@@ -454,7 +454,7 @@ public class BookAppointmentDate extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel7MouseClicked
 
     private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseClicked
-        new MainMenu().setVisible(true);
+        new CustomerMainMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel8MouseClicked
 
@@ -463,13 +463,12 @@ public class BookAppointmentDate extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        new BookAppointmentDate().setVisible(true);
+        new CustomerManageBloodBank().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-        new ManageBloodBank().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jLabel12MouseClicked
 
     /**

@@ -61,6 +61,11 @@ public class MainLogin extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 51, 0));
         jButton2.setText("Admin");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 2));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -162,9 +167,14 @@ public class MainLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new Login().setVisible(true);
+        new CustomerLogin().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new AdminLogin().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

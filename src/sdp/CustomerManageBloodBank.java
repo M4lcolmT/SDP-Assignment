@@ -1,11 +1,16 @@
 package sdp;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 
-public class ManageBloodBank extends javax.swing.JFrame {
+public class CustomerManageBloodBank extends javax.swing.JFrame {
     
-    public ManageBloodBank() {
+    public CustomerManageBloodBank() {
         initComponents();
         
     }
@@ -15,14 +20,21 @@ public class ManageBloodBank extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        FrameResult = new javax.swing.JFrame();
         jPanel12 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        bloodBankName = new javax.swing.JLabel();
+        bloodBankAddress = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        searchField1 = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -79,45 +91,157 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 355, Short.MAX_VALUE)
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
-        );
+        FrameResult.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        FrameResult.setMinimumSize(new java.awt.Dimension(391, 699));
+        FrameResult.setPreferredSize(new java.awt.Dimension(375, 650));
 
-        jLabel23.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
-        jLabel23.setText("Sunway Pyramid, Petaling Jaya");
+        jPanel12.setBackground(new java.awt.Color(198, 44, 44));
+        jPanel12.setMinimumSize(new java.awt.Dimension(390, 699));
+        jPanel12.setPreferredSize(new java.awt.Dimension(375, 650));
 
-        jLabel24.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
-        jLabel24.setText("24/4/2023 8am-6pm");
+        jPanel14.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel18.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(152, 148, 148));
+        jLabel18.setText("Blood Bank");
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(152, 148, 148));
+        jLabel21.setText("Address");
+
+        bloodBankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        bloodBankName.setText("Hospital Seberang Jaya");
+
+        bloodBankAddress.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
+        bloodBankAddress.setText("Jln Tun Hussein Onn, Pusat Seberang Jaya");
 
         jButton4.setBackground(new java.awt.Color(222, 10, 30));
         jButton4.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("View Details");
+        jButton4.setText("Schedule Appointment");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
-        jLabel25.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel25.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(152, 148, 148));
-        jLabel25.setText("Event Name");
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel21))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jButton4))
+                    .addComponent(bloodBankName, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bloodBankAddress))
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(bloodBankName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bloodBankAddress)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                .addGap(16, 16, 16))
+        );
 
-        jLabel26.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(152, 148, 148));
-        jLabel26.setText("Location");
+        jPanel14.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 384, -1));
 
-        jLabel27.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(152, 148, 148));
-        jLabel27.setText("Date and Time");
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/search black.png"))); // NOI18N
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+        jPanel14.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, 40));
 
-        jLabel28.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jLabel28.setText("Blood Donation Drive at Sunway Pyramid");
+        jButton6.setBackground(new java.awt.Color(255, 63, 63));
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("MAP VIEW");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 111, 40));
+
+        jLabel16.setFont(new java.awt.Font("Raleway ExtraBold", 0, 18)); // NOI18N
+        jLabel16.setText("Search");
+        jPanel14.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 75, -1));
+
+        searchField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchField1ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(searchField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 155, 40));
+
+        jLabel23.setFont(new java.awt.Font("Raleway ExtraBold", 1, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/arrow return.png"))); // NOI18N
+        jLabel23.setText(" Blood Bank");
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/iPhone Status bar.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel23)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel23)
+                .addGap(12, 12, 12)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout FrameResultLayout = new javax.swing.GroupLayout(FrameResult.getContentPane());
+        FrameResult.getContentPane().setLayout(FrameResultLayout);
+        FrameResultLayout.setHorizontalGroup(
+            FrameResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        FrameResultLayout.setVerticalGroup(
+            FrameResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(375,650));
 
         jPanel1.setBackground(new java.awt.Color(198, 44, 44));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,6 +249,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,6 +286,8 @@ public class ManageBloodBank extends javax.swing.JFrame {
                 .addComponent(jLabel5))
         );
 
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 16, -1, 46));
+
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -195,6 +322,8 @@ public class ManageBloodBank extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4))
         );
+
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 16, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -231,41 +360,20 @@ public class ManageBloodBank extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 16, -1, -1));
+
         jSeparator1.setBackground(new java.awt.Color(255, 153, 153));
         jSeparator1.setForeground(new java.awt.Color(255, 153, 153));
         jSeparator1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 375, -1));
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setMinimumSize(new java.awt.Dimension(375, 640));
+        jPanel9.setPreferredSize(new java.awt.Dimension(375, 794));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -301,7 +409,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addComponent(jButton2)
@@ -319,7 +427,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jLabel14))
@@ -333,7 +441,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 95, 384, -1));
+        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 384, -1));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -380,7 +488,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(jLabel19))
@@ -394,7 +502,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel9.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 257, -1, -1));
+        jPanel9.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, -1));
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -441,7 +549,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
                     .addComponent(jLabel34))
@@ -455,7 +563,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel9.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 422, -1, -1));
+        jPanel9.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -502,7 +610,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
                     .addComponent(jLabel40))
@@ -516,7 +624,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 579, -1, -1));
+        jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, -1, -1));
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -562,7 +670,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
                     .addComponent(jLabel46))
@@ -575,7 +683,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
                 .addGap(33, 33, 33))
         );
 
-        jPanel9.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 742, -1, -1));
+        jPanel9.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, -1, -1));
 
         searchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -596,8 +704,8 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jLabel10.setText("Search");
         jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 9, 75, -1));
 
-        jButton1.setBackground(new java.awt.Color(252, 118, 118));
-        jButton1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(255, 63, 63));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("MAP VIEW");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -619,9 +727,10 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/iPhone Status bar.png"))); // NOI18N
@@ -636,11 +745,11 @@ public class ManageBloodBank extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -667,7 +776,7 @@ public class ManageBloodBank extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
-        new MainMenu().setVisible(true);
+        new CustomerMainMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel6MouseClicked
 
@@ -696,20 +805,52 @@ public class ManageBloodBank extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        String searchfield1 = searchField.getText();
-        
-            if (searchfield1.equals(jLabel14.getText())) {
-                JOptionPane.showMessageDialog(this, "Search successful!");
-                jPanel8.setVisible(false);
-                jPanel10.setVisible(false);
-                jPanel11.setVisible(false);
-                jPanel13.setVisible(false);
+        String getSearch = searchField.getText();
+
+        try {
+            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+
+            Connection connection = DriverManager.getConnection(url);
+            String sql = "SELECT * FROM BloodBank WHERE BloodBank_name=?";
+
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, getSearch);
+            ResultSet result = statement.executeQuery();
+
+            if (result.next()) {
+                FrameResult.setVisible(true);
+                bloodBankName.setText(result.getString("BloodBank_name"));
+                bloodBankAddress.setText(result.getString("address"));
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Blood bank not found. Please try again");
             }
-            else
-            {
-                JOptionPane.showMessageDialog(this, "Blood Bank does not exist!");
-            }
+
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+        FrameResult.setVisible(false);
+    }//GEN-LAST:event_jLabel23MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void searchField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -728,14 +869,22 @@ public class ManageBloodBank extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -748,36 +897,40 @@ public class ManageBloodBank extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ManageBloodBank().setVisible(true);
+                new CustomerManageBloodBank().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame FrameResult;
+    private javax.swing.JLabel bloodBankAddress;
+    private javax.swing.JLabel bloodBankName;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
@@ -802,6 +955,8 @@ public class ManageBloodBank extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -817,5 +972,6 @@ public class ManageBloodBank extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextField searchField;
+    private javax.swing.JTextField searchField1;
     // End of variables declaration//GEN-END:variables
 }

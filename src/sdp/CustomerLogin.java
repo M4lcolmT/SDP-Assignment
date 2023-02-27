@@ -7,11 +7,11 @@ package sdp;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-public class Login extends javax.swing.JFrame {
+public class CustomerLogin extends javax.swing.JFrame {
 
     private Connection connection;
     
-    public Login() {
+    public CustomerLogin() {
         initComponents();
     }
 
@@ -158,7 +158,7 @@ public class Login extends javax.swing.JFrame {
             // Check if the query returned a result, and if matches, return true
             if (result.next() && result.getInt(1) == 1) {
                 JOptionPane.showMessageDialog(this, "Log in successful!");
-                new MainMenu().setVisible(true);
+                new CustomerMainMenu().setVisible(true);
                 this.dispose();
             }
             else {
@@ -194,21 +194,23 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new CustomerLogin().setVisible(true);
             }
         });
     }

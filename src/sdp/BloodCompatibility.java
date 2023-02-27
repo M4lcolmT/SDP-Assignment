@@ -47,11 +47,10 @@ public class BloodCompatibility extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(null);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/iPhone Status bar.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 520, 20);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, -1));
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -191,21 +190,17 @@ public class BloodCompatibility extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel11);
-        jPanel11.setBounds(0, 570, 460, 68);
+        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 460, -1));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/bloodDonationLogo.png"))); // NOI18N
-        jPanel1.add(jLabel13);
-        jLabel13.setBounds(70, 20, 240, 180);
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 240, 180));
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/blood type.png"))); // NOI18N
-        jPanel1.add(jLabel14);
-        jLabel14.setBounds(0, 210, 375, 370);
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 375, 370));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/Ellipse pink.png"))); // NOI18N
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(0, 0, 375, 307);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -222,7 +217,7 @@ public class BloodCompatibility extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
-        new MainMenu().setVisible(true);
+        new CustomerMainMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel6MouseClicked
 
@@ -282,18 +277,10 @@ public class BloodCompatibility extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JSeparator jSeparator1;

@@ -384,7 +384,7 @@ public class BloodCampaignDetails extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
-        new MainMenu().setVisible(true);
+        new CustomerMainMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel6MouseClicked
 

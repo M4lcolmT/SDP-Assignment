@@ -179,7 +179,7 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        new Login().setVisible(true);
+        new CustomerLogin().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
 

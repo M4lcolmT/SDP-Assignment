@@ -4,6 +4,8 @@
  */
 package sdp;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -51,10 +53,10 @@ public class RedeemRewards extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Raleway ExtraBold", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Number of Point Available: ");
+        jLabel4.setText("Number of Point Available:  -");
         jLabel4.setToolTipText("");
         jPanel3.add(jLabel4);
-        jLabel4.setBounds(40, 20, 250, 30);
+        jLabel4.setBounds(30, 20, 270, 30);
 
         jLabel5.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,6 +71,11 @@ public class RedeemRewards extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/mcd.png"))); // NOI18N
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/mcd.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/mcd.png"))); // NOI18N
 
@@ -167,6 +174,13 @@ public class RedeemRewards extends javax.swing.JFrame {
         new Profile().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        int points = 0;
+        if (points <= 1000) {
+            JOptionPane.showMessageDialog(this, "You do not have sufficient points!");
+        }
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     /**
      * @param args the command line arguments

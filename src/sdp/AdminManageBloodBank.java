@@ -68,7 +68,6 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
 
         FrameResult.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         FrameResult.setMinimumSize(new java.awt.Dimension(392,690));
-        FrameResult.setPreferredSize(new java.awt.Dimension(375, 650));
         FrameResult.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(198, 44, 44));
@@ -84,12 +83,12 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
-        PanelSearch.setBackground(new java.awt.Color(213, 213, 213));
+        PanelSearch.setBackground(new java.awt.Color(255, 255, 254));
         PanelSearch.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         PanelSearch.setPreferredSize(new java.awt.Dimension(219, 81));
 
         LSearch.setBackground(new java.awt.Color(255, 255, 255));
-        LSearch.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        LSearch.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         LSearch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout PanelSearchLayout = new javax.swing.GroupLayout(PanelSearch);
@@ -268,7 +267,7 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setPreferredSize(new java.awt.Dimension(375, 700));
 
-        jButton1.setBackground(new java.awt.Color(213, 213, 213));
+        jButton1.setBackground(new java.awt.Color(255, 255, 254));
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jButton1.setText("Hospital Kuala Lumpur");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -278,27 +277,27 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(213, 213, 213));
+        jButton2.setBackground(new java.awt.Color(255, 255, 254));
         jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jButton2.setText("Hospital Seberang Jaya");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jButton3.setBackground(new java.awt.Color(213, 213, 213));
+        jButton3.setBackground(new java.awt.Color(255, 255, 254));
         jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jButton3.setText("Hospital Putrajaya");
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jButton4.setBackground(new java.awt.Color(213, 213, 213));
+        jButton4.setBackground(new java.awt.Color(255, 255, 254));
         jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jButton4.setText("Hospital Putrajaya");
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jButton5.setBackground(new java.awt.Color(213, 213, 213));
+        jButton5.setBackground(new java.awt.Color(255, 255, 254));
         jButton5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jButton5.setText("Hospital Tengku Ampuan Rahimah");
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        BKL.setBackground(new java.awt.Color(213, 213, 213));
+        BKL.setBackground(new java.awt.Color(255, 255, 254));
         BKL.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         BKL.setText("Hospital Serdang");
         BKL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

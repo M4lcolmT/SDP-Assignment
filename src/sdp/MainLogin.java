@@ -57,6 +57,7 @@ public class MainLogin extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(255, 255, 254));
         jButton2.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 51, 0));
         jButton2.setText("Admin");

@@ -5,14 +5,24 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 
-public class CustomerManageBloodBank extends javax.swing.JFrame {
+public class CustomerBloodBank extends javax.swing.JFrame {
+
+    AppointmentData appointment;
+    private String bloodbank_Name;
+    private String bloodbank_Address;
+    private String username;
+    private Date appointmentDate;
+    private String appointmentTime;
     
-    public CustomerManageBloodBank() {
+    
+    public CustomerBloodBank() {
         initComponents();
-        
+        bloodbank_Name = bloodbankName.getText();
+        bloodbank_Address = bloodbankAddress.getText();
     }
 
     
@@ -42,8 +52,8 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        test = new javax.swing.JLabel();
+        test2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel8 = new javax.swing.JPanel();
@@ -55,8 +65,8 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jPanel10 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
+        bloodbankAddress = new javax.swing.JLabel();
+        bloodbankName = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         jButton8 = new javax.swing.JButton();
@@ -267,11 +277,11 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(152, 148, 148));
         jLabel12.setText("Address");
 
-        jLabel14.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jLabel14.setText("Hospital Seberang Jaya");
+        test.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        test.setText("Hospital Seberang Jaya");
 
-        jLabel15.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
-        jLabel15.setText("Jln Tun Hussein Onn, Pusat Seberang Jaya");
+        test2.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
+        test2.setText("Jln Tun Hussein Onn, Pusat Seberang Jaya");
 
         jButton2.setBackground(new java.awt.Color(222, 10, 30));
         jButton2.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
@@ -300,8 +310,8 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
                             .addComponent(jLabel12))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15))
+                            .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(test2))
                         .addGap(22, 22, 22))))
         );
         jPanel7Layout.setVerticalGroup(
@@ -310,10 +320,10 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jLabel14))
+                    .addComponent(test))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15)
+                    .addComponent(test2)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
@@ -390,11 +400,11 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
         jLabel32.setForeground(new java.awt.Color(152, 148, 148));
         jLabel32.setText("Address");
 
-        jLabel29.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
-        jLabel29.setText("Wilayah Persekutuan Kuala Lumpur");
+        bloodbankAddress.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
+        bloodbankAddress.setText("Wilayah Persekutuan Kuala Lumpur");
 
-        jLabel34.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jLabel34.setText("Hospital Kuala Lumpur");
+        bloodbankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        bloodbankName.setText("Hospital Kuala Lumpur");
 
         jLabel31.setBackground(new java.awt.Color(153, 153, 153));
         jLabel31.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
@@ -417,8 +427,8 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
                     .addComponent(jLabel32))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel29)
-                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bloodbankAddress)
+                    .addComponent(bloodbankName, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(105, 105, 105)
@@ -432,10 +442,10 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(jLabel34))
+                    .addComponent(bloodbankName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel29)
+                    .addComponent(bloodbankAddress)
                     .addComponent(jLabel32))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -804,7 +814,9 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
     }//GEN-LAST:event_searchFieldActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new BookAppointmentDate().setVisible(true);
+        AppointmentData appointment = new AppointmentData(username, bloodbank_Name, appointmentDate, appointmentTime,bloodbank_Address);
+        BookAppointmentDate appDetails = new BookAppointmentDate(appointment);
+        appDetails.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -899,14 +911,30 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CustomerManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CustomerManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CustomerManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CustomerManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -927,7 +955,7 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CustomerManageBloodBank().setVisible(true);
+                new CustomerBloodBank().setVisible(true);
             }
         });
     }
@@ -936,6 +964,8 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
     private javax.swing.JFrame FrameResult;
     private javax.swing.JLabel bloodBankAddress;
     private javax.swing.JLabel bloodBankName;
+    private javax.swing.JLabel bloodbankAddress;
+    private javax.swing.JLabel bloodbankName;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -949,8 +979,6 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -961,10 +989,8 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -1003,5 +1029,7 @@ public class CustomerManageBloodBank extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTextField searchField;
     private javax.swing.JTextField searchField1;
+    private javax.swing.JLabel test;
+    private javax.swing.JLabel test2;
     // End of variables declaration//GEN-END:variables
 }

@@ -93,7 +93,7 @@ public class CustomerMainMenu extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 17)); // NOI18N
         jButton1.setForeground(new java.awt.Color(222, 10, 30));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/bloodbank drop.png"))); // NOI18N
-        jButton1.setText("Manage Blood Bank              ");
+        jButton1.setText("Blood Bank                                ");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(222, 10, 30), 2));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,7 +258,7 @@ public class CustomerMainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new CustomerManageBloodBank().setVisible(true);
+        new CustomerBloodBank().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

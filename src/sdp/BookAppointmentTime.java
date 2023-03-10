@@ -1,12 +1,24 @@
 package sdp;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 
-public class BookAppointmentTimeTemplate extends javax.swing.JFrame {
+public class BookAppointmentTime extends javax.swing.JFrame {
    
+    AppointmentData appointment;
     
     
-    public BookAppointmentTimeTemplate() {
+    private String username = "Han";
+    private String setAppointmentTime = "";
+    
+    public BookAppointmentTime(AppointmentData appointment) {
         initComponents();
+        this.appointment = appointment;
     }
 
     @SuppressWarnings("unchecked")
@@ -26,16 +38,16 @@ public class BookAppointmentTimeTemplate extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        tenAM = new javax.swing.JButton();
-        elevenAM = new javax.swing.JButton();
-        twelvePM = new javax.swing.JButton();
-        twoPM = new javax.swing.JButton();
-        threePM = new javax.swing.JButton();
-        fourPM = new javax.swing.JButton();
-        fivePM = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
+        elevenAM = new javax.swing.JButton();
         onePM = new javax.swing.JButton();
+        tenAM = new javax.swing.JButton();
+        twelvePM = new javax.swing.JButton();
+        fivePM = new javax.swing.JButton();
+        threePM = new javax.swing.JButton();
+        twoPM = new javax.swing.JButton();
+        fourPM = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -184,41 +196,6 @@ public class BookAppointmentTimeTemplate extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        tenAM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
-        tenAM.setForeground(new java.awt.Color(211, 42, 42));
-        tenAM.setText("10am - 11am");
-        tenAM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
-
-        elevenAM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
-        elevenAM.setForeground(new java.awt.Color(211, 42, 42));
-        elevenAM.setText("11am - 12pm");
-        elevenAM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
-
-        twelvePM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
-        twelvePM.setForeground(new java.awt.Color(211, 42, 42));
-        twelvePM.setText("12pm - 1pm");
-        twelvePM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
-
-        twoPM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
-        twoPM.setForeground(new java.awt.Color(211, 42, 42));
-        twoPM.setText("2pm - 3pm");
-        twoPM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
-
-        threePM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
-        threePM.setForeground(new java.awt.Color(211, 42, 42));
-        threePM.setText("3pm - 4pm");
-        threePM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
-
-        fourPM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
-        fourPM.setForeground(new java.awt.Color(211, 42, 42));
-        fourPM.setText("4pm - 5pm");
-        fourPM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
-
-        fivePM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
-        fivePM.setForeground(new java.awt.Color(211, 42, 42));
-        fivePM.setText("5pm - 6pm");
-        fivePM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
-
         jLabel9.setFont(new java.awt.Font("Raleway ExtraBold", 0, 26)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Avaliable Timeslot");
@@ -233,10 +210,93 @@ public class BookAppointmentTimeTemplate extends javax.swing.JFrame {
             }
         });
 
+        elevenAM.setBackground(new java.awt.Color(255, 255, 254));
+        elevenAM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
+        elevenAM.setForeground(new java.awt.Color(211, 42, 42));
+        elevenAM.setText("11am - 12pm");
+        elevenAM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
+        elevenAM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elevenAMActionPerformed(evt);
+            }
+        });
+
+        onePM.setBackground(new java.awt.Color(255, 255, 254));
         onePM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
         onePM.setForeground(new java.awt.Color(211, 42, 42));
         onePM.setText("1pm - 2pm");
         onePM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
+        onePM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onePMActionPerformed(evt);
+            }
+        });
+
+        tenAM.setBackground(new java.awt.Color(255, 255, 254));
+        tenAM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
+        tenAM.setForeground(new java.awt.Color(211, 42, 42));
+        tenAM.setText("10am - 11am");
+        tenAM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
+        tenAM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tenAMActionPerformed(evt);
+            }
+        });
+
+        twelvePM.setBackground(new java.awt.Color(255, 255, 254));
+        twelvePM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
+        twelvePM.setForeground(new java.awt.Color(211, 42, 42));
+        twelvePM.setText("12pm - 1pm");
+        twelvePM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
+        twelvePM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                twelvePMActionPerformed(evt);
+            }
+        });
+
+        fivePM.setBackground(new java.awt.Color(255, 255, 254));
+        fivePM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
+        fivePM.setForeground(new java.awt.Color(211, 42, 42));
+        fivePM.setText("5pm - 6pm");
+        fivePM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
+        fivePM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fivePMActionPerformed(evt);
+            }
+        });
+
+        threePM.setBackground(new java.awt.Color(255, 255, 254));
+        threePM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
+        threePM.setForeground(new java.awt.Color(211, 42, 42));
+        threePM.setText("3pm - 4pm");
+        threePM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
+        threePM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                threePMActionPerformed(evt);
+            }
+        });
+
+        twoPM.setBackground(new java.awt.Color(255, 255, 254));
+        twoPM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
+        twoPM.setForeground(new java.awt.Color(211, 42, 42));
+        twoPM.setText("2pm - 3pm");
+        twoPM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
+        twoPM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                twoPMActionPerformed(evt);
+            }
+        });
+
+        fourPM.setBackground(new java.awt.Color(255, 255, 254));
+        fourPM.setFont(new java.awt.Font("Raleway ExtraBold", 0, 15)); // NOI18N
+        fourPM.setForeground(new java.awt.Color(211, 42, 42));
+        fourPM.setText("4pm - 5pm");
+        fourPM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(211, 42, 42), 2));
+        fourPM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fourPMActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -246,48 +306,46 @@ public class BookAppointmentTimeTemplate extends javax.swing.JFrame {
             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(fourPM, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(twoPM, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(twelvePM, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tenAM, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(threePM, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fivePM, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(elevenAM, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(onePM, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38))))
+                            .addComponent(tenAM, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(twoPM, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(elevenAM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(onePM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(threePM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fivePM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(38, 38, 38))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel9)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tenAM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(elevenAM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
+                .addComponent(jLabel9)
+                .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(twelvePM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(onePM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(threePM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(elevenAM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tenAM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(onePM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(twelvePM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(threePM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(twoPM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fourPM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fivePM, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(26, 26, 26)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -350,46 +408,80 @@ public class BookAppointmentTimeTemplate extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         
+        DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+        String appointmentDate = fmt.format(appointment.getAppointmentDate());
+        
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return;
+        }
+        // Create a SQL INSERT statement to insert the date and time into the MSSQL database
+        PreparedStatement stmt = null;
+        try {
+            String sql = "INSERT INTO Pending_Appointment (username, bloodbank_name, date, time, address) VALUES (?,?,?,?,?)";
+            stmt = conn.prepareStatement(sql);
+            
+            stmt.setString(1, username);
+            stmt.setString(2, appointment.getBloodBank_Name());
+            stmt.setString(3, appointmentDate);
+            stmt.setString(4, setAppointmentTime);
+            stmt.setString(5, appointment.getBloodBank_Address());
+            // Execute the SQL INSERT statement
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Your appointment is booked!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Close the JDBC connection
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        
     }//GEN-LAST:event_jButton13ActionPerformed
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BookAppointmentTimeTemplate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BookAppointmentTimeTemplate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BookAppointmentTimeTemplate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BookAppointmentTimeTemplate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    private void tenAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tenAMActionPerformed
+        setAppointmentTime = "10:00am";
+    }//GEN-LAST:event_tenAMActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BookAppointmentTimeTemplate().setVisible(true);
-            }
-        });
-    }
+    private void elevenAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elevenAMActionPerformed
+        setAppointmentTime = "11:00am";
+    }//GEN-LAST:event_elevenAMActionPerformed
+
+    private void twelvePMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twelvePMActionPerformed
+        setAppointmentTime = "12:00pm";
+    }//GEN-LAST:event_twelvePMActionPerformed
+
+    private void onePMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePMActionPerformed
+        setAppointmentTime = "1:00pm";
+    }//GEN-LAST:event_onePMActionPerformed
+
+    private void twoPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPMActionPerformed
+        setAppointmentTime = "2:00pm";
+    }//GEN-LAST:event_twoPMActionPerformed
+
+    private void threePMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threePMActionPerformed
+        setAppointmentTime = "3:00pm";
+    }//GEN-LAST:event_threePMActionPerformed
+
+    private void fourPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourPMActionPerformed
+        setAppointmentTime = "4:00pm";
+    }//GEN-LAST:event_fourPMActionPerformed
+
+    private void fivePMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fivePMActionPerformed
+        setAppointmentTime = "5:00pm";
+    }//GEN-LAST:event_fivePMActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton elevenAM;

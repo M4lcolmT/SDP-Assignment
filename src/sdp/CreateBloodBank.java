@@ -130,7 +130,7 @@ public class CreateBloodBank extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        new CustomerManageBloodBank().setVisible(true);
+        new CustomerBloodBank().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 

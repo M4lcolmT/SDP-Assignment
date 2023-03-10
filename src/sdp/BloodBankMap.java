@@ -109,7 +109,7 @@ public class BloodBankMap extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        new CustomerManageBloodBank().setVisible(true);
+        new CustomerBloodBank().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 

@@ -1,9 +1,5 @@
 package sdp;
 
-/**
- *
- * @author User
- */
 public class SDP {
 
     

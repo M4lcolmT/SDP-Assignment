@@ -2,12 +2,16 @@ package sdp;
 
 import javax.swing.JOptionPane;
 
-
+    
 public class BookAppointmentDate extends javax.swing.JFrame {
 
+    AppointmentData appointment;
+    private String username;
+    private String appointmentTime;
     
-    public BookAppointmentDate() {
+    public BookAppointmentDate(AppointmentData appointment) {
         initComponents();
+        this.appointment = appointment;
     }
     
     
@@ -439,8 +443,11 @@ public class BookAppointmentDate extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(this, "Date choosen! Please select the avaliable timeslots!");
-        new BookAppointmentTimeTemplate().setVisible(true);
-        this.dispose();
+        
+        AppointmentData newAppointment = new AppointmentData(username, appointment.getBloodBank_Name(), appointmentDateField.getDate(), appointmentTime,appointment.getBloodBank_Address());
+        BookAppointmentTime appDate = new BookAppointmentTime(newAppointment);
+        appDate.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
@@ -463,7 +470,7 @@ public class BookAppointmentDate extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        new CustomerManageBloodBank().setVisible(true);
+        new CustomerBloodBank().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -471,47 +478,6 @@ public class BookAppointmentDate extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel12MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BookAppointmentDate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BookAppointmentDate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BookAppointmentDate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BookAppointmentDate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BookAppointmentDate().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public com.toedter.calendar.JDateChooser appointmentDateField;

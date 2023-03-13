@@ -13,7 +13,7 @@ public class BookAppointmentTime extends javax.swing.JFrame {
     AppointmentData appointment;
     
     
-    private String username = "Han";
+    
     private String setAppointmentTime = "";
     
     public BookAppointmentTime(AppointmentData appointment) {
@@ -392,8 +392,9 @@ public class BookAppointmentTime extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
-        new CustomerMainMenu().setVisible(true);
-        this.dispose();
+        CustomerBloodBank newAppointment = new CustomerBloodBank(appointment);
+        newAppointment.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jPanel6MouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
@@ -402,7 +403,8 @@ public class BookAppointmentTime extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
-        new Appointment().setVisible(true);
+        UpcomingAppointments newAppointment = new UpcomingAppointments(appointment);
+        newAppointment.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel5MouseClicked
 
@@ -424,7 +426,7 @@ public class BookAppointmentTime extends javax.swing.JFrame {
             String sql = "INSERT INTO Pending_Appointment (username, bloodbank_name, date, time, address) VALUES (?,?,?,?,?)";
             stmt = conn.prepareStatement(sql);
             
-            stmt.setString(1, username);
+            stmt.setString(1, appointment.getUsername());
             stmt.setString(2, appointment.getBloodBank_Name());
             stmt.setString(3, appointmentDate);
             stmt.setString(4, setAppointmentTime);
@@ -452,35 +454,35 @@ public class BookAppointmentTime extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void tenAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tenAMActionPerformed
-        setAppointmentTime = "10:00am";
+        setAppointmentTime = "10:00 AM";
     }//GEN-LAST:event_tenAMActionPerformed
 
     private void elevenAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elevenAMActionPerformed
-        setAppointmentTime = "11:00am";
+        setAppointmentTime = "11:00 AM";
     }//GEN-LAST:event_elevenAMActionPerformed
 
     private void twelvePMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twelvePMActionPerformed
-        setAppointmentTime = "12:00pm";
+        setAppointmentTime = "12:00 PM";
     }//GEN-LAST:event_twelvePMActionPerformed
 
     private void onePMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePMActionPerformed
-        setAppointmentTime = "1:00pm";
+        setAppointmentTime = "1:00 PM";
     }//GEN-LAST:event_onePMActionPerformed
 
     private void twoPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPMActionPerformed
-        setAppointmentTime = "2:00pm";
+        setAppointmentTime = "2:00 PM";
     }//GEN-LAST:event_twoPMActionPerformed
 
     private void threePMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threePMActionPerformed
-        setAppointmentTime = "3:00pm";
+        setAppointmentTime = "3:00 PM";
     }//GEN-LAST:event_threePMActionPerformed
 
     private void fourPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourPMActionPerformed
-        setAppointmentTime = "4:00pm";
+        setAppointmentTime = "4:00 PM";
     }//GEN-LAST:event_fourPMActionPerformed
 
     private void fivePMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fivePMActionPerformed
-        setAppointmentTime = "5:00pm";
+        setAppointmentTime = "5:00 PM";
     }//GEN-LAST:event_fivePMActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
 public class BookAppointmentDate extends javax.swing.JFrame {
 
     AppointmentData appointment;
-    private String username;
     private String appointmentTime;
     
     public BookAppointmentDate(AppointmentData appointment) {
@@ -444,7 +443,7 @@ public class BookAppointmentDate extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(this, "Date choosen! Please select the avaliable timeslots!");
         
-        AppointmentData newAppointment = new AppointmentData(username, appointment.getBloodBank_Name(), appointmentDateField.getDate(), appointmentTime,appointment.getBloodBank_Address());
+        AppointmentData newAppointment = new AppointmentData(appointment.getUsername(), appointment.getBloodBank_Name(), appointmentDateField.getDate(), appointmentTime,appointment.getBloodBank_Address());
         BookAppointmentTime appDate = new BookAppointmentTime(newAppointment);
         appDate.setVisible(true);
         dispose();
@@ -456,13 +455,13 @@ public class BookAppointmentDate extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel6MouseClicked
 
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
-        new Appointment().setVisible(true);
-        this.dispose();
+       
     }//GEN-LAST:event_jPanel7MouseClicked
 
     private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseClicked
-        new CustomerMainMenu().setVisible(true);
-        this.dispose();
+        CustomerBloodBank newAppointment = new CustomerBloodBank(appointment);
+        newAppointment.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jPanel8MouseClicked
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -470,8 +469,9 @@ public class BookAppointmentDate extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        new CustomerBloodBank().setVisible(true);
-        this.dispose();
+        CustomerBloodBank newAppointment = new CustomerBloodBank(appointment);
+        newAppointment.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked

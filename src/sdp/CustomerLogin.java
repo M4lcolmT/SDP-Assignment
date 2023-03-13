@@ -10,6 +10,12 @@ import javax.swing.JOptionPane;
 public class CustomerLogin extends javax.swing.JFrame {
 
     private Connection connection;
+    private String username;
+    private String bloodbank_Name;
+    private String bloodbank_Address;
+    private Date appointmentDate;
+    private String appointmentTime;
+    
     
     public CustomerLogin() {
         initComponents();
@@ -141,7 +147,7 @@ public class CustomerLogin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        String username = usernameField.getText();
+        username = usernameField.getText();
         String password = passwordField.getText();
         
         try {
@@ -158,7 +164,9 @@ public class CustomerLogin extends javax.swing.JFrame {
             // Check if the query returned a result, and if matches, return true
             if (result.next() && result.getInt(1) == 1) {
                 JOptionPane.showMessageDialog(this, "Log in successful!");
-                new CustomerMainMenu().setVisible(true);
+                AppointmentData appointment = new AppointmentData(username, bloodbank_Name, appointmentDate, appointmentTime,bloodbank_Address);
+                CustomerMainMenu newAppointment = new CustomerMainMenu(appointment);
+                newAppointment.setVisible(true);
                 this.dispose();
             }
             else {

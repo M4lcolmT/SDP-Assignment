@@ -8,10 +8,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class UpcomingAppointments extends javax.swing.JFrame {
-
+    
+    AppointmentData appointment;
    
-    public UpcomingAppointments() {
+    public UpcomingAppointments(AppointmentData appointment) {
         initComponents();
+        this.appointment = appointment;
         setAppointment();
     }
     
@@ -238,75 +240,43 @@ public class UpcomingAppointments extends javax.swing.JFrame {
         });
 
         jPanel7.setBackground(new java.awt.Color(236, 231, 231));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(72, 72, 72));
         jLabel14.setText("Blood Bank Name");
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 18, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(72, 72, 72));
         jLabel15.setText("Date");
+        jPanel7.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 51, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(72, 72, 72));
         jLabel16.setText("Time");
+        jPanel7.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 84, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(72, 72, 72));
         jLabel17.setText("Address");
+        jPanel7.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 117, -1, -1));
 
-        name.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
+        name.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         name.setText("jLabel12");
+        jPanel7.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 18, -1, -1));
 
-        date.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
+        date.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         date.setText("jLabel13");
+        jPanel7.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 51, -1, -1));
 
-        time.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
+        time.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         time.setText("jLabel18");
+        jPanel7.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 84, -1, -1));
 
-        address.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
+        address.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         address.setText("jLabel19");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(date)
-                    .addComponent(name)
-                    .addComponent(time)
-                    .addComponent(address))
-                .addContainerGap(158, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(name))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(date))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(time))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(address))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
+        jPanel7.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 117, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -324,9 +294,9 @@ public class UpcomingAppointments extends javax.swing.JFrame {
                         .addGap(82, 82, 82)
                         .addComponent(jLabel9))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(17, 17, 17)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,9 +307,9 @@ public class UpcomingAppointments extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
+                .addGap(48, 48, 48)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -349,6 +319,11 @@ public class UpcomingAppointments extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/arrow return.png"))); // NOI18N
         jLabel2.setText(" Appointment");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -360,7 +335,7 @@ public class UpcomingAppointments extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -389,8 +364,9 @@ public class UpcomingAppointments extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
-        new CustomerMainMenu().setVisible(true);
-        this.dispose();
+        CustomerMainMenu newAppointment = new CustomerMainMenu(appointment);
+        newAppointment.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jPanel6MouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
@@ -399,52 +375,22 @@ public class UpcomingAppointments extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
-        new Appointment().setVisible(true);
+        UpcomingAppointments newAppointment = new UpcomingAppointments(appointment);
+        newAppointment.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel5MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        new PreviousAppointments().setVisible(true);
+        PreviousAppointments newAppointment = new PreviousAppointments(appointment);
+        newAppointment.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel11MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UpcomingAppointments.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UpcomingAppointments.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UpcomingAppointments.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UpcomingAppointments.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UpcomingAppointments().setVisible(true);
-            }
-        });
-    }
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        CustomerMainMenu newAppointment = new CustomerMainMenu(appointment);
+        newAppointment.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel address;

@@ -9,8 +9,11 @@ import javax.swing.JOptionPane;
 
 public class BloodDonationCampaign extends javax.swing.JFrame {
 
-    public BloodDonationCampaign() {
+    AppointmentData appointment;
+    
+    public BloodDonationCampaign(AppointmentData appointment) {
         initComponents();
+        this.appointment = appointment;
         
     }
 
@@ -1037,18 +1040,21 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
     }//GEN-LAST:event_searchFieldActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new BloodCampaignDetails().setVisible(true);
+        BloodCampaignDetails bloodCampaignDetails = new BloodCampaignDetails(appointment);
+        bloodCampaignDetails.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new BloodCampaignMap().setVisible(true);
+        BloodCampaignMap map = new BloodCampaignMap(appointment);
+        map.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        new CustomerMainMenu().setVisible(true);
-        this.dispose();
+        CustomerMainMenu newAppointment = new CustomerMainMenu(appointment);
+        newAppointment.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
@@ -1106,13 +1112,15 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
-        new UpcomingAppointments().setVisible(true);
+        UpcomingAppointments newAppointment = new UpcomingAppointments(appointment);
+        newAppointment.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel5MouseClicked
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
-        new CustomerMainMenu().setVisible(true);
-        this.dispose();
+        CustomerMainMenu newAppointment = new CustomerMainMenu(appointment);
+        newAppointment.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jPanel6MouseClicked
 
     private void jPanel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel19MouseClicked
@@ -1126,44 +1134,6 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
     private void jPanel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel21MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel21MouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BloodDonationCampaign.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BloodDonationCampaign.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BloodDonationCampaign.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BloodDonationCampaign.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BloodDonationCampaign().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame FrameResult;

@@ -285,8 +285,7 @@ public class AdminMainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_userListButtonActionPerformed
 
     private void dashBoardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashBoardButtonActionPerformed
-        new BloodCompatibility().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_dashBoardButtonActionPerformed
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
@@ -295,8 +294,7 @@ public class AdminMainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel5MouseClicked
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
-        new CustomerMainMenu().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jPanel6MouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked

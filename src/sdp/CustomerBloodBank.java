@@ -56,7 +56,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         test = new javax.swing.JLabel();
         test2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        scheduleAppointmentBtn = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel8 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
@@ -85,10 +85,10 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
-        searchField = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
+        TFSearch = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        searchBtn = new javax.swing.JButton();
         jPanel18 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
@@ -125,10 +125,11 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jLabel21.setText("Address");
 
         bloodBankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        bloodBankName.setText("Hospital Seberang Jaya");
+        bloodBankName.setForeground(new java.awt.Color(0, 0, 0));
 
+        bloodBankAddress.setBackground(new java.awt.Color(255, 255, 255));
         bloodBankAddress.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
-        bloodBankAddress.setText("Jln Tun Hussein Onn, Pusat Seberang Jaya");
+        bloodBankAddress.setForeground(new java.awt.Color(0, 0, 0));
 
         jButton4.setBackground(new java.awt.Color(222, 10, 30));
         jButton4.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
@@ -150,26 +151,26 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                     .addComponent(jLabel18)
                     .addComponent(jLabel21))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jButton4))
-                    .addComponent(bloodBankName, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bloodBankAddress))
-                .addContainerGap(34, Short.MAX_VALUE))
+                    .addComponent(bloodBankName, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                    .addComponent(bloodBankAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(bloodBankName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bloodBankAddress)
+                    .addComponent(bloodBankName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bloodBankAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                 .addGap(16, 16, 16))
         );
@@ -285,13 +286,13 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         test2.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
         test2.setText("Jln Tun Hussein Onn, Pusat Seberang Jaya");
 
-        jButton2.setBackground(new java.awt.Color(222, 10, 30));
-        jButton2.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Schedule Appointment");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        scheduleAppointmentBtn.setBackground(new java.awt.Color(222, 10, 30));
+        scheduleAppointmentBtn.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        scheduleAppointmentBtn.setForeground(new java.awt.Color(255, 255, 255));
+        scheduleAppointmentBtn.setText("Schedule Appointment");
+        scheduleAppointmentBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                scheduleAppointmentBtnActionPerformed(evt);
             }
         });
 
@@ -304,7 +305,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(scheduleAppointmentBtn)
                         .addGap(111, 111, 111))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -328,7 +329,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                     .addComponent(test2)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                .addComponent(scheduleAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                 .addGap(11, 11, 11)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -577,20 +578,12 @@ public class CustomerBloodBank extends javax.swing.JFrame {
 
         jPanel9.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, -1, -1));
 
-        searchField.addActionListener(new java.awt.event.ActionListener() {
+        TFSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchFieldActionPerformed(evt);
+                TFSearchActionPerformed(evt);
             }
         });
-        jPanel9.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 37, 155, 40));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/search black.png"))); // NOI18N
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
-            }
-        });
-        jPanel9.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 37, -1, 40));
+        jPanel9.add(TFSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 155, 40));
 
         jLabel10.setFont(new java.awt.Font("Raleway ExtraBold", 0, 18)); // NOI18N
         jLabel10.setText("Search");
@@ -606,6 +599,15 @@ public class CustomerBloodBank extends javax.swing.JFrame {
             }
         });
         jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 37, 111, 40));
+
+        searchBtn.setBackground(new java.awt.Color(255, 255, 255));
+        searchBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/search_32px.png"))); // NOI18N
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
+        jPanel9.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, 40));
 
         jScrollPane1.setViewportView(jPanel9);
 
@@ -811,50 +813,22 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
+    private void TFSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_searchFieldActionPerformed
+    }//GEN-LAST:event_TFSearchActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void scheduleAppointmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleAppointmentBtnActionPerformed
         AppointmentData newAppointment = new AppointmentData(appointment.getUsername(), bloodbank_Name, appointmentDate, appointmentTime,bloodbank_Address);
         BookAppointmentDate appDetails = new BookAppointmentDate(newAppointment);
         appDetails.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_scheduleAppointmentBtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         BloodBankMap  map = new BloodBankMap(appointment);
         map.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        String getSearch = searchField.getText();
-
-        try {
-            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
-
-            Connection connection = DriverManager.getConnection(url);
-            String sql = "SELECT * FROM BloodBank WHERE BloodBank_name=?";
-
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, getSearch);
-            ResultSet result = statement.executeQuery();
-
-            if (result.next()) {
-                FrameResult.setVisible(true);
-                bloodBankName.setText(result.getString("BloodBank_name"));
-                bloodBankAddress.setText(result.getString("address"));
-
-            } else {
-                JOptionPane.showMessageDialog(this, "Blood bank not found. Please try again");
-            }
-
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -900,14 +874,40 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jPanel21MouseClicked
 
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        String getSearch = TFSearch.getText();
+
+        try {
+            String url = "jdbc:sqlserver://LAPTOP-8VG4L8ND;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+
+            Connection connection = DriverManager.getConnection(url);
+            String sql = "SELECT * FROM Bloodbank WHERE bloodbank_name=?";
+
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, getSearch);
+            ResultSet result = statement.executeQuery();
+
+            if (result.next()) {
+                FrameResult.setVisible(true);
+                bloodbankName.setText(result.getString("bloodbank_name"));
+                bloodbankAddress.setText(result.getString("address"));
+            } else {
+                JOptionPane.showMessageDialog(this, "Bloodbank not found. Please try again");
+            }
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_searchBtnActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame FrameResult;
+    private javax.swing.JTextField TFSearch;
     private javax.swing.JLabel bloodBankAddress;
     private javax.swing.JLabel bloodBankName;
     private javax.swing.JLabel bloodbankAddress;
     private javax.swing.JLabel bloodbankName;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -945,7 +945,6 @@ public class CustomerBloodBank extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -967,7 +966,8 @@ public class CustomerBloodBank extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JTextField searchField;
+    private javax.swing.JButton scheduleAppointmentBtn;
+    private javax.swing.JButton searchBtn;
     private javax.swing.JTextField searchField1;
     private javax.swing.JLabel test;
     private javax.swing.JLabel test2;

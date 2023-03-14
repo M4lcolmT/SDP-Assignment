@@ -355,6 +355,11 @@ public class BookAppointmentTime extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/arrow return.png"))); // NOI18N
         jLabel2.setText(" Appointment");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -398,7 +403,7 @@ public class BookAppointmentTime extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel6MouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        new Profile().setVisible(true);
+        new Profile(appointment).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel4MouseClicked
 
@@ -484,6 +489,12 @@ public class BookAppointmentTime extends javax.swing.JFrame {
     private void fivePMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fivePMActionPerformed
         setAppointmentTime = "5:00 PM";
     }//GEN-LAST:event_fivePMActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        CustomerBloodBank newAppointment = new CustomerBloodBank(appointment);
+        newAppointment.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton elevenAM;

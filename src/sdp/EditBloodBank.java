@@ -2,57 +2,78 @@ package sdp;
 
 
 import java.sql.*;
-import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
 public class EditBloodBank extends javax.swing.JFrame {
 
     private Connection connection;
+    BloodBank bloodbank;
     
-    public EditBloodBank() {
+    public static String getBloodGroup(int index) {
+        switch (index) {
+            case 1:
+                return "A+";
+            case 2:
+                return "A-";
+            case 3:
+                return "B+";
+            case 4:
+                return "B-";
+            case 5:
+                return "O+";
+            case 6:
+                return "O-";
+            case 7:
+                return "AB+";
+            case 8:
+                return "AB-";
+            default:
+                throw new IllegalArgumentException("Invalid blood group index: " + index);
+        }
+    }
+    
+    public EditBloodBank(BloodBank bloodbank) {
         initComponents();
-        displayInventory();
+        this.bloodbank = bloodbank;
+        bankName.setText(bloodbank.getBloodbankName());
+        displayRecord();
     }
     
-    private ArrayList<BloodBank> bloodBank(){
-        ArrayList<BloodBank> bloodBank = new ArrayList<>();
+    private void displayRecord() {
+        String bloodBankName = bankName.getText();
         try {
-            // Set up a connection to MSSQL
-            connection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
-
-            // Prepare and execute a SQL query to check the username and password
-            String query = "SELECT * FROM Blood_Inventory";
-            PreparedStatement statement = connection.prepareStatement(query);
-            ResultSet result = statement.executeQuery();
-            BloodBank bloodbank;
             
-            while(result.next()) {
-                bloodbank = new BloodBank(result.getString("Blood_type"),result.getString("Quantity"));
-                bloodBank.add(bloodbank);
+            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            
+            connection = DriverManager.getConnection(url);
+            String sql = "SELECT * FROM BloodBank_Blood_Availability WHERE bloodbank_name =?";
+            
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, bloodBankName);
+            ResultSet resultSet = statement.executeQuery();
+
+            DefaultTableModel model = (DefaultTableModel) inventoryTable.getModel();
+            
+            while (resultSet.next()) {
+                // Get quantities for each blood group from remaining columns of result set
+                for (int col = 2; col <= 9; col++) {
+                    // Retrieve from database
+                    String bloodGroup = getBloodGroup(col - 1); // Get blood group label
+                    int quantity = resultSet.getInt(col); // Get quantity for current blood group
+
+                    // Add to JTable
+                    model.addRow(new Object[]{bloodGroup, quantity});
+                }  
             }
-        } catch (SQLException e) {
-            System.out.println("Error connecting to database: " + e.getMessage());
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println("Error closing connection: " + e.getMessage());
-            }
+            // Set model to JTable
+            inventoryTable.setModel(model);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this,"Error connecting to database");
         }
-        return bloodBank;
     }
     
-    private void displayInventory() {
-        ArrayList<BloodBank> inventory = bloodBank();
-        DefaultTableModel model = (DefaultTableModel) inventoryTable.getModel();
-        Object[] row = new Object[2];
-        for (int i = 0; i < inventory.size(); i++) {
-            row[0] = inventory.get(i).getTypeOfBlood();
-            row[1] = inventory.get(i).getUnitsOfBlood();
-            model.addRow(row);
-        }
-    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -61,10 +82,11 @@ public class EditBloodBank extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        bankName = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         inventoryTable = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -79,8 +101,8 @@ public class EditBloodBank extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Raleway ExtraBold", 1, 24)); // NOI18N
         jLabel5.setText("Blood Avaliability");
 
-        jLabel6.setFont(new java.awt.Font("Raleway ExtraBold", 0, 18)); // NOI18N
-        jLabel6.setText("Hospital Kuala Lumpur");
+        bankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 18)); // NOI18N
+        bankName.setText("Hospital Kuala Lumpur");
 
         inventoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,43 +116,62 @@ public class EditBloodBank extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/delete.png"))); // NOI18N
 
+        jButton1.setText("Update");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jLabel7))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(bankName)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabel7))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jButton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bankName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jButton1)
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 23)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/arrow return.png"))); // NOI18N
         jLabel1.setText("Manage Blood Bank");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/iPhone Status bar.png"))); // NOI18N
 
@@ -170,50 +211,79 @@ public class EditBloodBank extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+        
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        AdminManageBloodBank manageBloodBank = new AdminManageBloodBank(bloodbank);
+        manageBloodBank.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
 
-    
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) inventoryTable.getModel();
+        String bloodBankName = bankName.getText();
+
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            connection = DriverManager.getConnection(url);
+
+            String sql = "UPDATE BloodBank_Blood_Availability SET A_pos=?, A_neg=?, B_pos=?, B_neg=?, O_pos=?, O_neg=?, AB_pos=?, AB_neg=? WHERE bloodbank_name = ?";
+
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            // Loop through each row of the JTable
+            for (int row = 0; row < model.getRowCount(); row++) {
+                // Extract data for each blood group from the second column onward
+                String bloodGroup = getBloodGroup(row + 1);
+                int quantity = Integer.parseInt(model.getValueAt(row, 1).toString());
+
+                switch (bloodGroup) {
+                    case "A+":
+                        statement.setInt(1, quantity);
+                        break;
+                    case "A-":
+                        statement.setInt(2, quantity);
+                        break;
+                    case "B+":
+                        statement.setInt(3, quantity);
+                        break;
+                    case "B-":
+                        statement.setInt(4, quantity);
+                        break;
+                    case "O+":
+                        statement.setInt(5, quantity);
+                        break;
+                    case "O-":
+                        statement.setInt(6, quantity);
+                        break;
+                    case "AB+":
+                        statement.setInt(7, quantity);
+                        break;
+                    case "AB-":
+                        statement.setInt(8, quantity);
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Invalid blood group: " + bloodGroup);
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EditBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EditBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EditBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            
+            // Set the last parameter (bloodbank_name) and execute the statement
+            statement.setString(9, bloodBankName);
+            statement.executeUpdate();
+            connection.close();
+            JOptionPane.showMessageDialog(this, "Success!");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Error connecting to database");
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EditBloodBank().setVisible(true);
-            }
-        });
-    }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bankName;
     private javax.swing.JTable inventoryTable;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

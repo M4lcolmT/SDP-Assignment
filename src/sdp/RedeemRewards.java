@@ -4,9 +4,11 @@ import javax.swing.JOptionPane;
 
 public class RedeemRewards extends javax.swing.JFrame {
 
-
-    public RedeemRewards() {
+    AppointmentData appointment;
+    
+    public RedeemRewards(AppointmentData appointment) {
         initComponents();
+        this.appointment = appointment;
     }
 
     @SuppressWarnings("unchecked")
@@ -168,18 +170,37 @@ public class RedeemRewards extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        new Profile().setVisible(true);
+        new Profile(appointment).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         int points = Integer.parseInt(pointLabel.getText());
-        if (points <= 1000) {
+        
+        if(points == 0) {
+            int response = JOptionPane.showConfirmDialog(this, "Are you sure you want to logout?", "Logout", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+                JOptionPane.showMessageDialog(null,
+                    "Schedule an appointment to donate blood!", "Booking",
+                    JOptionPane.INFORMATION_MESSAGE);
+                CustomerBloodBank newAppointment = new CustomerBloodBank(appointment);
+                newAppointment.setVisible(true);
+                dispose();
+            }
+            else if (response == JOptionPane.NO_OPTION)
+            {
+                JOptionPane.showMessageDialog(null,
+                    "Only by donating blood can get points!", "Error",
+                    JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        else if (points <= 1000) {
             JOptionPane.showMessageDialog(this, "You do not have sufficient points!");
         } 
-        else 
+        else
         {
             JOptionPane.showMessageDialog(this, "Reward Claimed Succesfully!");
+            pointLabel.setText("500");
         }
     }//GEN-LAST:event_jLabel7MouseClicked
 
@@ -193,44 +214,6 @@ public class RedeemRewards extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Reward Claimed Succesfully!");
         }
     }//GEN-LAST:event_jLabel6MouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RedeemRewards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RedeemRewards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RedeemRewards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RedeemRewards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RedeemRewards().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

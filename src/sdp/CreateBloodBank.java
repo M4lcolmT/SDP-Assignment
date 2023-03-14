@@ -6,9 +6,11 @@ import javax.swing.JOptionPane;
 public class CreateBloodBank extends javax.swing.JFrame {
 
     private Connection connection;
+    BloodBank bloodbank;
     
-    public CreateBloodBank() {
+    public CreateBloodBank(BloodBank bloodbank) {
         initComponents();
+        this.bloodbank = bloodbank;
     }
 
     
@@ -125,7 +127,8 @@ public class CreateBloodBank extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        new AdminManageBloodBank().setVisible(true);
+        AdminManageBloodBank manageBloodBank = new AdminManageBloodBank(bloodbank);
+        manageBloodBank.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 

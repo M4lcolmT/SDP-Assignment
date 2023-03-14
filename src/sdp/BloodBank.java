@@ -2,25 +2,17 @@ package sdp;
 
 public class BloodBank {
 
-    public BloodBank(String typeOfBlood, String unitsOfBlood) {
-        this.typeOfBlood = typeOfBlood;
-        this.unitsOfBlood = unitsOfBlood;
+    public BloodBank(String bloodbankName) {
+        this.bloodbankName = bloodbankName;
     }
 
-    public String getTypeOfBlood() {
-        return typeOfBlood;
+    public String getBloodbankName() {
+        return bloodbankName;
     }
 
-    public void setTypeOfBlood(String typeOfBlood) {
-        this.typeOfBlood = typeOfBlood;
+    public void setBloodbankName(String bloodbankName) {
+        this.bloodbankName = bloodbankName;
     }
-
-    public String getUnitsOfBlood() {
-        return unitsOfBlood;
-    }
-
-    public void setUnitsOfBlood(String unitsOfBlood) {
-        this.unitsOfBlood = unitsOfBlood;
-    }
-    private String typeOfBlood, unitsOfBlood;
+    
+    private String bloodbankName;
 }

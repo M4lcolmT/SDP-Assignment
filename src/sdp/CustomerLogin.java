@@ -175,12 +175,12 @@ public class CustomerLogin extends javax.swing.JFrame {
                 passwordField.setText("");
             }
         } catch (SQLException e) {
-            System.out.println("Error connecting to database: " + e.getMessage());
+            JOptionPane.showMessageDialog(this,"Error connecting to database: " + e.getMessage());
         } finally {
             try {
                 connection.close();
             } catch (SQLException e) {
-                System.out.println("Error closing connection: " + e.getMessage());
+                JOptionPane.showMessageDialog(this,"Error closing connection: " + e.getMessage());
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

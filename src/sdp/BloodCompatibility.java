@@ -218,7 +218,7 @@ public class BloodCompatibility extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel5MouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        new Profile().setVisible(true);
+        new Profile(appointment).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel4MouseClicked
 

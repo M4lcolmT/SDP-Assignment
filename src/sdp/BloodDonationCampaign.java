@@ -1077,7 +1077,7 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
                 dateTime.setText(result.getString("date_time"));
 
             } else {
-                JOptionPane.showMessageDialog(this, "Blood Donation Campaign not found. Please try again");
+                JOptionPane.showMessageDialog(this, "Blood Donation Campaign not found. Please try again!");
             }
 
             connection.close();
@@ -1107,7 +1107,7 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        new Profile().setVisible(true);
+        new Profile(appointment).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel4MouseClicked
 

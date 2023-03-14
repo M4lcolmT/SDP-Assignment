@@ -125,11 +125,9 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jLabel21.setText("Address");
 
         bloodBankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        bloodBankName.setForeground(new java.awt.Color(0, 0, 0));
 
         bloodBankAddress.setBackground(new java.awt.Color(255, 255, 255));
         bloodBankAddress.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
-        bloodBankAddress.setForeground(new java.awt.Color(0, 0, 0));
 
         jButton4.setBackground(new java.awt.Color(222, 10, 30));
         jButton4.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
@@ -598,9 +596,8 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 37, 111, 40));
+        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 111, 40));
 
-        searchBtn.setBackground(new java.awt.Color(255, 255, 255));
         searchBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/search_32px.png"))); // NOI18N
         searchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -878,10 +875,10 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         String getSearch = TFSearch.getText();
 
         try {
-            String url = "jdbc:sqlserver://LAPTOP-8VG4L8ND;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
 
             Connection connection = DriverManager.getConnection(url);
-            String sql = "SELECT * FROM Bloodbank WHERE bloodbank_name=?";
+            String sql = "SELECT * FROM BlooBbank WHERE bloodbank_name=?";
 
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, getSearch);

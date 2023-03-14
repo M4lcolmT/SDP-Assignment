@@ -13,11 +13,15 @@ import javax.swing.JOptionPane;
 
 public class AdminManageBloodBank extends javax.swing.JFrame {
 
+    BloodBank bloodbank;
+    private String bloodbankName;
+    private String unitOfBlood;
     
-    public AdminManageBloodBank() {
+    
+    public AdminManageBloodBank(BloodBank bloodbank) {
         initComponents();
+        this.bloodbank = bloodbank;
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -30,7 +34,6 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         PanelSearch = new javax.swing.JPanel();
         LSearch = new javax.swing.JLabel();
-        BViewDetails = new javax.swing.JButton();
         TFSearch2 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -43,12 +46,12 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        BKL = new javax.swing.JButton();
+        kualaLumpur = new javax.swing.JButton();
+        seberangJaya = new javax.swing.JButton();
+        putrajaya = new javax.swing.JButton();
+        sibu = new javax.swing.JButton();
+        bintulu = new javax.swing.JButton();
+        serdang = new javax.swing.JButton();
         TFSearch = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -76,6 +79,11 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
         PanelSearch.setBackground(new java.awt.Color(255, 255, 254));
         PanelSearch.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         PanelSearch.setPreferredSize(new java.awt.Dimension(219, 81));
+        PanelSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PanelSearchMouseClicked(evt);
+            }
+        });
 
         LSearch.setBackground(new java.awt.Color(255, 255, 255));
         LSearch.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
@@ -95,28 +103,13 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        BViewDetails.setBackground(new java.awt.Color(222, 10, 30));
-        BViewDetails.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BViewDetails.setForeground(new java.awt.Color(255, 255, 255));
-        BViewDetails.setText("View Details");
-        BViewDetails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BViewDetailsActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(BViewDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(PanelSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
+                .addComponent(PanelSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
@@ -124,9 +117,7 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(PanelSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BViewDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 562, Short.MAX_VALUE))
+                .addGap(0, 632, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel15);
@@ -257,40 +248,65 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setPreferredSize(new java.awt.Dimension(375, 700));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 254));
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jButton1.setText("Hospital Kuala Lumpur");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        kualaLumpur.setBackground(new java.awt.Color(255, 255, 254));
+        kualaLumpur.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        kualaLumpur.setText("Hospital Kuala Lumpur");
+        kualaLumpur.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        kualaLumpur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                kualaLumpurActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 254));
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jButton2.setText("Hospital Seberang Jaya");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        seberangJaya.setBackground(new java.awt.Color(255, 255, 254));
+        seberangJaya.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        seberangJaya.setText("Hospital Seberang Jaya");
+        seberangJaya.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        seberangJaya.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seberangJayaActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 254));
-        jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jButton3.setText("Hospital Putrajaya");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        putrajaya.setBackground(new java.awt.Color(255, 255, 254));
+        putrajaya.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        putrajaya.setText("Hospital Putrajaya");
+        putrajaya.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        putrajaya.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                putrajayaActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 254));
-        jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jButton4.setText("Hospital Putrajaya");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        sibu.setBackground(new java.awt.Color(255, 255, 254));
+        sibu.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        sibu.setText("Hospital Sibu");
+        sibu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        sibu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sibuActionPerformed(evt);
+            }
+        });
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 254));
-        jButton5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jButton5.setText("Hospital Tengku Ampuan Rahimah");
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bintulu.setBackground(new java.awt.Color(255, 255, 254));
+        bintulu.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        bintulu.setText("Hospital Bintulu");
+        bintulu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bintulu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bintuluActionPerformed(evt);
+            }
+        });
 
-        BKL.setBackground(new java.awt.Color(255, 255, 254));
-        BKL.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        BKL.setText("Hospital Serdang");
-        BKL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        serdang.setBackground(new java.awt.Color(255, 255, 254));
+        serdang.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        serdang.setText("Hospital Serdang");
+        serdang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        serdang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serdangActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -299,29 +315,29 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BKL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bintulu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                    .addComponent(kualaLumpur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(seberangJaya, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(putrajaya, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sibu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(serdang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(kualaLumpur, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(seberangJaya, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(putrajaya, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sibu, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bintulu, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(BKL, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(serdang, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90))
         );
 
@@ -433,14 +449,14 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TFSearchActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new EditBloodBank().setVisible(true);
+    private void kualaLumpurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kualaLumpurActionPerformed
+        bloodbankName = kualaLumpur.getText();
+        
+        BloodBank newBloodBank = new BloodBank(bloodbankName);
+        EditBloodBank editBloodBank = new EditBloodBank(newBloodBank);
+        editBloodBank.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void BViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BViewDetailsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BViewDetailsActionPerformed
+    }//GEN-LAST:event_kualaLumpurActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         String getSearch = TFSearch.getText();
@@ -470,7 +486,8 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void createBankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBankActionPerformed
-        new CreateBloodBank().setVisible(true);
+        CreateBloodBank createBloodBank = new CreateBloodBank(bloodbank);
+        createBloodBank.setVisible(true);
         dispose();
     }//GEN-LAST:event_createBankActionPerformed
 
@@ -487,72 +504,80 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        new AdminMainMenu().setVisible(true);
+        AdminMainMenu adminMainMenu = new AdminMainMenu(bloodbank);
+        adminMainMenu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        new AdminMainMenu().setVisible(true);
+        AdminMainMenu adminMainMenu = new AdminMainMenu(bloodbank);
+        adminMainMenu.setVisible(true);
         this.dispose();
         FrameResult.setVisible(false);
     }//GEN-LAST:event_jLabel7MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminManageBloodBank.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    private void seberangJayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seberangJayaActionPerformed
+        bloodbankName = seberangJaya.getText();
+        
+        BloodBank newBloodBank = new BloodBank(bloodbankName);
+        EditBloodBank editBloodBank = new EditBloodBank(newBloodBank);
+        editBloodBank.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_seberangJayaActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminManageBloodBank().setVisible(true);
-            }
-        });
-    }
+    private void putrajayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_putrajayaActionPerformed
+        bloodbankName = putrajaya.getText();
+        
+        BloodBank newBloodBank = new BloodBank(bloodbankName);
+        EditBloodBank editBloodBank = new EditBloodBank(newBloodBank);
+        editBloodBank.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_putrajayaActionPerformed
+
+    private void sibuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sibuActionPerformed
+        bloodbankName = sibu.getText();
+        
+        BloodBank newBloodBank = new BloodBank(bloodbankName);
+        EditBloodBank editBloodBank = new EditBloodBank(newBloodBank);
+        editBloodBank.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_sibuActionPerformed
+
+    private void bintuluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bintuluActionPerformed
+        bloodbankName = bintulu.getText();
+        
+        BloodBank newBloodBank = new BloodBank(bloodbankName);
+        EditBloodBank editBloodBank = new EditBloodBank(newBloodBank);
+        editBloodBank.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_bintuluActionPerformed
+
+    private void serdangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serdangActionPerformed
+        bloodbankName = serdang.getText();
+        
+        BloodBank newBloodBank = new BloodBank(bloodbankName);
+        EditBloodBank editBloodBank = new EditBloodBank(newBloodBank);
+        editBloodBank.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_serdangActionPerformed
+
+    private void PanelSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSearchMouseClicked
+        bloodbankName = LSearch.getText();
+        
+        BloodBank newBloodBank = new BloodBank(bloodbankName);
+        EditBloodBank editBloodBank = new EditBloodBank(newBloodBank);
+        editBloodBank.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_PanelSearchMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BKL;
-    private javax.swing.JButton BViewDetails;
     private javax.swing.JFrame FrameResult;
     private javax.swing.JLabel LSearch;
     private javax.swing.JPanel PanelSearch;
     private javax.swing.JTextField TFSearch;
     private javax.swing.JTextField TFSearch2;
+    private javax.swing.JButton bintulu;
     private javax.swing.JButton createBank;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -572,5 +597,10 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton kualaLumpur;
+    private javax.swing.JButton putrajaya;
+    private javax.swing.JButton seberangJaya;
+    private javax.swing.JButton serdang;
+    private javax.swing.JButton sibu;
     // End of variables declaration//GEN-END:variables
 }

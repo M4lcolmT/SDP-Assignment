@@ -66,7 +66,7 @@ public class BloodDonationCampaignRegister extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jLabel6.setText("Time");
 
-        timeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Time", " " }));
+        timeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Time", "9am - 3pm", "10am - 4pm", "11am - 5pm", "12pm - 6pm", "1pm - 7pm" }));
 
         registerButton.setBackground(new java.awt.Color(255, 51, 51));
         registerButton.setFont(new java.awt.Font("Raleway ExtraBold", 1, 12)); // NOI18N
@@ -205,7 +205,7 @@ public class BloodDonationCampaignRegister extends javax.swing.JFrame {
             connection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
 
             // Prepare and execute a SQL query to insert the new user data into the table
-            String query = "INSERT INTO BloodDonationCampaign (event_name, date, time, location, address, organizer_name, organizer_email, organizer_contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Pending_BloodDonationCampaign (event_name, event_date, event_time, location, address, organizer_name, organizer_email, organizer_contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, eventName);
             statement.setString(2, eventDate);

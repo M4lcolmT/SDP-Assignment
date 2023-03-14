@@ -199,9 +199,13 @@
         <Component class="javax.swing.JComboBox" name="timeBox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
+              <StringArray count="6">
                 <StringItem index="0" value="Choose Time"/>
-                <StringItem index="1" value=" "/>
+                <StringItem index="1" value="9am - 3pm"/>
+                <StringItem index="2" value="10am - 4pm"/>
+                <StringItem index="3" value="11am - 5pm"/>
+                <StringItem index="4" value="12pm - 6pm"/>
+                <StringItem index="5" value="1pm - 7pm"/>
               </StringArray>
             </Property>
           </Properties>

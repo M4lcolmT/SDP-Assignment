@@ -124,10 +124,13 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jLabel21.setForeground(new java.awt.Color(152, 148, 148));
         jLabel21.setText("Address");
 
+        bloodBankName.setBackground(new java.awt.Color(255, 255, 255));
         bloodBankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        bloodBankName.setForeground(new java.awt.Color(0, 0, 0));
 
         bloodBankAddress.setBackground(new java.awt.Color(255, 255, 255));
         bloodBankAddress.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
+        bloodBankAddress.setForeground(new java.awt.Color(0, 0, 0));
 
         jButton4.setBackground(new java.awt.Color(222, 10, 30));
         jButton4.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
@@ -279,10 +282,10 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jLabel12.setText("Address");
 
         test.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        test.setText("Hospital Seberang Jaya");
+        test.setText("Hospital Kuala Lumpur");
 
         test2.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
-        test2.setText("Jln Tun Hussein Onn, Pusat Seberang Jaya");
+        test2.setText("Wilayah Persekutuan Kuala Lumpur");
 
         scheduleAppointmentBtn.setBackground(new java.awt.Color(222, 10, 30));
         scheduleAppointmentBtn.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
@@ -300,20 +303,19 @@ public class CustomerBloodBank extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(scheduleAppointmentBtn)
-                        .addGap(111, 111, 111))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(test2))
-                        .addGap(22, 22, 22))))
+                    .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(test2))
+                .addGap(22, 22, 22))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(scheduleAppointmentBtn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,7 +330,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(scheduleAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                .addGap(11, 11, 11)
+                .addGap(12, 12, 12)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -337,7 +339,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel22.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jLabel22.setText("Hospital Kuala Lumpur");
+        jLabel22.setText("Hospital Seberang Jaya");
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(152, 148, 148));
@@ -349,7 +351,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jLabel19.setText("Blood Bank");
 
         jLabel17.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
-        jLabel17.setText("Wilayah Persekutuan Kuala Lumpur");
+        jLabel17.setText("Jalan Tun Hussein Onn");
 
         jButton3.setBackground(new java.awt.Color(222, 10, 30));
         jButton3.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
@@ -388,8 +390,8 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                     .addComponent(jLabel17)
                     .addComponent(jLabel20))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addGap(10, 10, 10)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -402,10 +404,10 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jLabel32.setText("Address");
 
         bloodbankAddress.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
-        bloodbankAddress.setText("Wilayah Persekutuan Kuala Lumpur");
+        bloodbankAddress.setText("Presint 7, 62250 Putrajaya");
 
         bloodbankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        bloodbankName.setText("Hospital Kuala Lumpur");
+        bloodbankName.setText("Hospital Putrajaya");
 
         jLabel31.setBackground(new java.awt.Color(153, 153, 153));
         jLabel31.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
@@ -431,11 +433,11 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                     .addComponent(bloodbankAddress)
                     .addComponent(bloodbankName, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(jButton8)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jSeparator4)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addComponent(jButton8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -448,9 +450,9 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bloodbankAddress)
                     .addComponent(jLabel32))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -459,7 +461,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel40.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jLabel40.setText("Hospital Kuala Lumpur");
+        jLabel40.setText("Hospital Raja Perempuan");
 
         jLabel38.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(152, 148, 148));
@@ -529,7 +531,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         jLabel44.setText("Address");
 
         jLabel46.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jLabel46.setText("Hospital Kuala Lumpur");
+        jLabel46.setText("Hospital Kuala Terengganu");
 
         jLabel41.setFont(new java.awt.Font("Raleway ExtraBold", 0, 11)); // NOI18N
         jLabel41.setText("Wilayah Persekutuan Kuala Lumpur");
@@ -596,7 +598,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 111, 40));
+        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 111, 40));
 
         searchBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/search_32px.png"))); // NOI18N
         searchBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -604,7 +606,7 @@ public class CustomerBloodBank extends javax.swing.JFrame {
                 searchBtnActionPerformed(evt);
             }
         });
-        jPanel9.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, 40));
+        jPanel9.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 40, 40));
 
         jScrollPane1.setViewportView(jPanel9);
 
@@ -875,10 +877,10 @@ public class CustomerBloodBank extends javax.swing.JFrame {
         String getSearch = TFSearch.getText();
 
         try {
-            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            String url = new DatabaseURL().getURL();
 
             Connection connection = DriverManager.getConnection(url);
-            String sql = "SELECT * FROM BlooBbank WHERE bloodbank_name=?";
+            String sql = "SELECT * FROM BloodBank WHERE bloodbank_name=?";
 
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, getSearch);

@@ -44,16 +44,16 @@ public class CustomerLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Raleway ExtraBold", 1, 14)); // NOI18N
         jLabel2.setText("USERNAME");
 
-        jLabel3.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Raleway ExtraBold", 1, 14)); // NOI18N
         jLabel3.setText("PASSWORD");
 
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Log In");
+        jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -110,12 +110,12 @@ public class CustomerLogin extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel7)
                 .addGap(36, 36, 36)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -123,7 +123,7 @@ public class CustomerLogin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -152,7 +152,7 @@ public class CustomerLogin extends javax.swing.JFrame {
         
         try {
             // Set up a connection to MSSQL
-            connection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
+            connection = DriverManager.getConnection(new DatabaseURL().getURL());
 
             // Prepare and execute a SQL query to check the username and password
             String query = "SELECT COUNT(*) FROM CustomerDetails WHERE name = ? AND password = ?";

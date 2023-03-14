@@ -85,7 +85,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sdp/Images/BloodCamp.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Blood Donation Campaign"/>
+            <Property name="text" type="java.lang.String" value="  Blood Donation Campaign"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
@@ -129,7 +129,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sdp/Images/arrow compatability.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Blood Compatability Chart"/>
+            <Property name="text" type="java.lang.String" value="  Blood Compatability Chart"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
@@ -173,7 +173,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sdp/Images/bloodbank drop.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Blood Bank                                "/>
+            <Property name="text" type="java.lang.String" value="  Blood Bank                        "/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">

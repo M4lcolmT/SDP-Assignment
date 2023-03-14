@@ -3,15 +3,13 @@ package sdp;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-public class AdminAppointmentList extends javax.swing.JFrame {
+public class ManageBloodDonationCampaign extends javax.swing.JFrame {
 
     BloodBank bloodbank;
-    private Connection connection;
     
-    public AdminAppointmentList(BloodBank bloodbank) {
+    public ManageBloodDonationCampaign() {
         initComponents();
         setAppointment();
-        this.bloodbank = bloodbank;
     }
     
     private void setAppointment() {
@@ -19,8 +17,8 @@ public class AdminAppointmentList extends javax.swing.JFrame {
             String url = new DatabaseURL().getURL();
             
             Connection connection = DriverManager.getConnection(url);
-            String sql = "SELECT * FROM Pending_Appointment";
-            
+            String sql = "SELECT * FROM Pending_BloodDonationCampaign";
+
             Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery(sql);
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -28,10 +26,9 @@ public class AdminAppointmentList extends javax.swing.JFrame {
 
             while (rs.next()) {     
                 for(int i = 1 ; i <= columnsNumber; i++){
-                    name.setText(rs.getString(1));
-                    bloodbankName.setText(rs.getString(2));
-                    date.setText(rs.getString(3));
-                    time.setText(rs.getString(4));
+                    eventName.setText(rs.getString(1));
+                    address.setText(rs.getString(4));
+                    dateTime.setText(rs.getString(3));
                 }
             }
 
@@ -79,39 +76,33 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        rejectDate1 = new javax.swing.JLabel();
-        rejectTime1 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
         rejectPanel = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        rejectName = new javax.swing.JLabel();
-        rejectBloodBankName = new javax.swing.JLabel();
-        rejectDate = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         rejectBtn = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
-        jLabel19 = new javax.swing.JLabel();
-        rejectTime = new javax.swing.JLabel();
         acceptPanel = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        name = new javax.swing.JLabel();
-        bloodbankName = new javax.swing.JLabel();
-        date = new javax.swing.JLabel();
+        eventName = new javax.swing.JLabel();
+        address = new javax.swing.JLabel();
+        dateTime = new javax.swing.JLabel();
         accept = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
-        jLabel29 = new javax.swing.JLabel();
-        time = new javax.swing.JLabel();
         searchBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -445,7 +436,7 @@ public class AdminAppointmentList extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,18 +463,26 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel10.setText("Username");
+        jLabel10.setText("Event Name");
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel11.setText("BloodBank Name");
+        jLabel11.setText("Address");
+
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(193, 193, 193));
+        jLabel12.setText("Date and Time");
 
         jLabel13.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jLabel13.setText("Johnny papa");
+        jLabel13.setText("Donate Blood at Mitsui Outlet Park");
 
         jLabel14.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jLabel14.setText("Hospital Serdang");
+
+        jLabel15.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        jLabel15.setText("2pm - 6pm");
 
         jButton1.setBackground(new java.awt.Color(222, 10, 30));
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -507,53 +506,30 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
 
-        rejectDate1.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        rejectDate1.setText("2023-04-14");
-
-        rejectTime1.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        rejectTime1.setText("9am - 5pm");
-
-        jLabel21.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel21.setText("Time");
-
-        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel20.setText("Date");
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator2)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(39, 39, 39)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
                             .addComponent(jLabel14)
                             .addComponent(jLabel13)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(jButton1)
-                        .addGap(61, 61, 61)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel20))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rejectDate1)
-                            .addComponent(rejectTime1))))
+                        .addGap(59, 59, 59)
+                        .addComponent(jButton2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator2)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -563,22 +539,18 @@ public class AdminAppointmentList extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20)
-                    .addComponent(rejectDate1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rejectTime1)
-                    .addComponent(jLabel21))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1))
         );
@@ -588,26 +560,26 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel16.setText("Username");
+        jLabel16.setText("Event Name");
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel17.setText("BloodBank Name");
+        jLabel17.setText("Address");
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel18.setText("Date");
+        jLabel18.setText("Date and Time");
 
-        rejectName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        rejectName.setText("Jake Henderson ");
+        jLabel19.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        jLabel19.setText("Jake Henderson ");
 
-        rejectBloodBankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        rejectBloodBankName.setText("Hospital Bintulu");
+        jLabel20.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        jLabel20.setText("Hospital Bintulu");
 
-        rejectDate.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        rejectDate.setText("2023-04-14");
+        jLabel21.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        jLabel21.setText("9am - 5pm");
 
         jButton3.setBackground(new java.awt.Color(222, 10, 30));
         jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -631,14 +603,6 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel19.setText("Time");
-
-        rejectTime.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        rejectTime.setText("9am - 5pm");
-
         javax.swing.GroupLayout rejectPanelLayout = new javax.swing.GroupLayout(rejectPanel);
         rejectPanel.setLayout(rejectPanelLayout);
         rejectPanelLayout.setHorizontalGroup(
@@ -646,49 +610,44 @@ public class AdminAppointmentList extends javax.swing.JFrame {
             .addGroup(rejectPanelLayout.createSequentialGroup()
                 .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rejectPanelLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(39, 39, 39)
+                        .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel19)))
+                    .addGroup(rejectPanelLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(jButton3)
                         .addGap(59, 59, 59)
-                        .addComponent(rejectBtn))
-                    .addGroup(rejectPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel17))
-                        .addGap(41, 41, 41)
-                        .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rejectBloodBankName)
-                            .addComponent(rejectName)
-                            .addComponent(rejectDate)
-                            .addComponent(rejectTime))))
-                .addContainerGap(101, Short.MAX_VALUE))
+                        .addComponent(rejectBtn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jSeparator3)
         );
         rejectPanelLayout.setVerticalGroup(
             rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rejectPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(rejectName, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(rejectBloodBankName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addComponent(rejectDate, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(rejectTime))
-                .addGap(24, 24, 24)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(rejectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(rejectBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1))
         );
@@ -698,26 +657,26 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         jLabel22.setBackground(new java.awt.Color(255, 255, 255));
         jLabel22.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel22.setText("Username");
+        jLabel22.setText("Event Name");
 
         jLabel23.setBackground(new java.awt.Color(255, 255, 255));
         jLabel23.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel23.setText("BloodBank Name");
+        jLabel23.setText("Address");
 
         jLabel24.setBackground(new java.awt.Color(255, 255, 255));
         jLabel24.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel24.setText("Date");
+        jLabel24.setText("Date and Time");
 
-        name.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        name.setText("jLabel13");
+        eventName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        eventName.setText("jLabel13");
 
-        bloodbankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        bloodbankName.setText("jLabel14");
+        address.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        address.setText("jLabel14");
 
-        date.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        date.setText("jLabel15");
+        dateTime.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        dateTime.setText("jLabel15");
 
         accept.setBackground(new java.awt.Color(222, 10, 30));
         accept.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -741,14 +700,6 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel29.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel29.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel29.setText(" Time");
-
-        time.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        time.setText("jLabel15");
-
         javax.swing.GroupLayout acceptPanelLayout = new javax.swing.GroupLayout(acceptPanel);
         acceptPanel.setLayout(acceptPanelLayout);
         acceptPanelLayout.setHorizontalGroup(
@@ -757,49 +708,43 @@ public class AdminAppointmentList extends javax.swing.JFrame {
                 .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(acceptPanelLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel23)
-                                .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(jLabel29))
+                        .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(39, 39, 39)
                         .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(time)
-                            .addComponent(date)
-                            .addComponent(bloodbankName)
-                            .addComponent(name)))
+                            .addComponent(dateTime)
+                            .addComponent(address)
+                            .addComponent(eventName)))
                     .addGroup(acceptPanelLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(accept)
                         .addGap(59, 59, 59)
                         .addComponent(jButton6)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jSeparator4)
         );
         acceptPanelLayout.setVerticalGroup(
             acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(acceptPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(name))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(eventName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(bloodbankName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(date))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(time))
-                .addGap(24, 24, 24)
+                    .addComponent(address)
+                    .addComponent(jLabel23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateTime)
+                    .addComponent(jLabel24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(accept)
                     .addComponent(jButton6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1))
         );
@@ -817,11 +762,11 @@ public class AdminAppointmentList extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(TFSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(17, 17, 17)
+                .addComponent(TFSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(searchBtn)
-                .addGap(32, 32, 32))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(acceptPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(rejectPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -829,15 +774,15 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TFSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rejectPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(acceptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -848,7 +793,7 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Raleway ExtraBold", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/arrow return.png"))); // NOI18N
-        jLabel2.setText(" Appointment");
+        jLabel2.setText("Blood Donation Campaign");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -910,152 +855,25 @@ public class AdminAppointmentList extends javax.swing.JFrame {
     }//GEN-LAST:event_TFSearchActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        acceptPanel.setVisible(true);
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to confirm this appointment?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (response == JOptionPane.YES_OPTION) {
-            JOptionPane.showMessageDialog(null,
-                "Appointment Successfully Confirmed!", "Exit",
-                JOptionPane.INFORMATION_MESSAGE);
-            String username = name.getText();
-            String bloodbankname = bloodbankName.getText();
-            String appointmentDate = date.getText();
-            String appointmentTime = time.getText();
-            
-            try {
-            
-            // Set up a connection to MSSQL
-            connection = DriverManager.getConnection(new DatabaseURL().getURL());
-
-            // Prepare and execute a SQL query to insert the new user data into the table
-            String query = "INSERT INTO Appointment (username, bloodbank_name, date, time) VALUES (?, ?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1,  username);
-            statement.setString(2, bloodbankname);
-            statement.setString(3, appointmentDate);
-            statement.setString(4, appointmentTime);
-            int rowsInserted = statement.executeUpdate();
-
-            // Check if the query was successful and print a message to the console
-            if (rowsInserted > 0) {
-                System.out.println("New blood donation campaign inserted successfully.");
-            }
-        } catch (SQLException e) {
-            System.out.println("Error connecting to database: " + e.getMessage());
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println("Error closing connection: " + e.getMessage());
-            }
-        }  
-            acceptPanel.setVisible(false);
-        }
-        else if (response == JOptionPane.NO_OPTION)
-        {
-            JOptionPane.showMessageDialog(null,
-                "Action cancelled!", "Error",JOptionPane.WARNING_MESSAGE);
-        }   
+        JOptionPane.showConfirmDialog(this, "Do you want to confirm this appointment?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jPanel7.setVisible(true);
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to reject this appointment?", "Reject", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (response == JOptionPane.YES_OPTION) {
-            String username = rejectName.getText();
-            String bloodbankname = rejectBloodBankName.getText();
-            String appointmentDate = rejectDate.getText();
-            String appointmentTime = rejectTime.getText();
-            try {
-                Connection con = DriverManager.getConnection(new DatabaseURL().getURL());
-                PreparedStatement pst = con.prepareStatement("DELETE FROM Pending_Appointment WHERE username=? AND bloodbank_name=? AND date = ? AND time=?");
-                pst.setString(1, username);
-                pst.setString(2, bloodbankname);
-                pst.setString(3, appointmentDate);
-                pst.setString(4, appointmentTime);
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Appointment Successfully Rejected", "Exit", JOptionPane.INFORMATION_MESSAGE);
-                jPanel7.setVisible(false);
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }   
-        }
-        else if (response == JOptionPane.NO_OPTION)
-        {
-            JOptionPane.showMessageDialog(null,
-                "Action cancelled!", "Error",
-                JOptionPane.WARNING_MESSAGE);
-        }
+        JOptionPane.showConfirmDialog(this, "Do you want to cancel this appointment?", "Cancel", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        rejectPanel.setVisible(true);
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to confirm this appointment?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (response == JOptionPane.YES_OPTION) {
-            JOptionPane.showMessageDialog(null,
-                "Appointment Successfully Confirmed!", "Exit",
-                JOptionPane.INFORMATION_MESSAGE);
-            String username = name.getText();
-            String bloodbankname = bloodbankName.getText();
-            String appointmentDate = date.getText();
-            String appointmentTime = time.getText();
-            
-            try {
-            
-            // Set up a connection to MSSQL
-            connection = DriverManager.getConnection(new DatabaseURL().getURL());
-
-            // Prepare and execute a SQL query to insert the new user data into the table
-            String query = "INSERT INTO Appointment (username, bloodbank_name, date, time) VALUES (?, ?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1,  username);
-            statement.setString(2, bloodbankname);
-            statement.setString(3, appointmentDate);
-            statement.setString(4, appointmentTime);
-            int rowsInserted = statement.executeUpdate();
-
-            // Check if the query was successful and print a message to the console
-            if (rowsInserted > 0) {
-                System.out.println("New blood donation campaign inserted successfully.");
-            }
-        } catch (SQLException e) {
-            System.out.println("Error connecting to database: " + e.getMessage());
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println("Error closing connection: " + e.getMessage());
-            }
-        }  
-            rejectPanel.setVisible(false);
-        }
-        else if (response == JOptionPane.NO_OPTION)
-        {
-            JOptionPane.showMessageDialog(null,
-                "Action cancelled!", "Error",JOptionPane.WARNING_MESSAGE);
-        }   
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void rejectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectBtnActionPerformed
         rejectPanel.setVisible(true);
         int response = JOptionPane.showConfirmDialog(this, "Do you want to reject this appointment?", "Reject", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (response == JOptionPane.YES_OPTION) {
-            String username = rejectName.getText();
-            String bloodbankname = rejectBloodBankName.getText();
-            String appointmentDate = rejectDate.getText();
-            String appointmentTime = rejectTime.getText();
-            try {
-                Connection con = DriverManager.getConnection(new DatabaseURL().getURL());
-                PreparedStatement pst = con.prepareStatement("DELETE FROM Pending_Appointment WHERE username=? AND bloodbank_name=? AND date = ? AND time=?");
-                pst.setString(1, username);
-                pst.setString(2, bloodbankname);
-                pst.setString(3, appointmentDate);
-                pst.setString(4, appointmentTime);
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Appointment Successfully Rejected", "Exit", JOptionPane.INFORMATION_MESSAGE);
-                rejectPanel.setVisible(false);
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }   
+            JOptionPane.showMessageDialog(null,
+                "Blood Donation Campaign Rejected!", "Exit",
+                JOptionPane.INFORMATION_MESSAGE);
+            rejectPanel.setVisible(false);
         }
         else if (response == JOptionPane.NO_OPTION)
         {
@@ -1070,40 +888,8 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         int response = JOptionPane.showConfirmDialog(this, "Do you want to confirm this appointment?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (response == JOptionPane.YES_OPTION) {
             JOptionPane.showMessageDialog(null,
-                "Appointment Successfully Confirmed!", "Exit",
+                "Blood Donation Campaign Accepted Confirmed!", "Exit",
                 JOptionPane.INFORMATION_MESSAGE);
-            String username = name.getText();
-            String bloodbankname = bloodbankName.getText();
-            String appointmentDate = date.getText();
-            String appointmentTime = time.getText();
-            
-            try {
-            
-            // Set up a connection to MSSQL
-            connection = DriverManager.getConnection(new DatabaseURL().getURL());
-
-            // Prepare and execute a SQL query to insert the new user data into the table
-            String query = "INSERT INTO Appointment (username, bloodbank_name, date, time) VALUES (?, ?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1,  username);
-            statement.setString(2, bloodbankname);
-            statement.setString(3, appointmentDate);
-            statement.setString(4, appointmentTime);
-            int rowsInserted = statement.executeUpdate();
-
-            // Check if the query was successful and print a message to the console
-            if (rowsInserted > 0) {
-                System.out.println("New blood donation campaign inserted successfully.");
-            }
-        } catch (SQLException e) {
-            System.out.println("Error connecting to database: " + e.getMessage());
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println("Error closing connection: " + e.getMessage());
-            }
-        }  
             acceptPanel.setVisible(false);
         }
         else if (response == JOptionPane.NO_OPTION)
@@ -1114,33 +900,7 @@ public class AdminAppointmentList extends javax.swing.JFrame {
     }//GEN-LAST:event_acceptActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        acceptPanel.setVisible(true);
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to reject this appointment?", "Reject", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (response == JOptionPane.YES_OPTION) {
-            String username = rejectName.getText();
-            String bloodbankname = rejectBloodBankName.getText();
-            String appointmentDate = rejectDate.getText();
-            String appointmentTime = rejectTime.getText();
-            try {
-                Connection con = DriverManager.getConnection(new DatabaseURL().getURL());
-                PreparedStatement pst = con.prepareStatement("DELETE FROM Pending_Appointment WHERE username=? AND bloodbank_name=? AND date = ? AND time=?");
-                pst.setString(1, username);
-                pst.setString(2, bloodbankname);
-                pst.setString(3, appointmentDate);
-                pst.setString(4, appointmentTime);
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Appointment Successfully Rejected", "Exit", JOptionPane.INFORMATION_MESSAGE);
-                acceptPanel.setVisible(false);
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }   
-        }
-        else if (response == JOptionPane.NO_OPTION)
-        {
-            JOptionPane.showMessageDialog(null,
-                "Action cancelled!", "Error",
-                JOptionPane.WARNING_MESSAGE);
-        }        
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -1168,10 +928,10 @@ public class AdminAppointmentList extends javax.swing.JFrame {
         String getSearch = TFSearch.getText();
 
         try {
-            String url = new DatabaseURL().getURL();
+            String url = "jdbc:sqlserver:/DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
 
             Connection connection = DriverManager.getConnection(url);
-            String sql = "SELECT * FROM Appointment WHERE username=?";
+            String sql = "SELECT * FROM Pending_BloodDonationCampaign WHERE event_name=?";
 
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, getSearch);
@@ -1179,9 +939,9 @@ public class AdminAppointmentList extends javax.swing.JFrame {
             
             if (result.next()) {
                 FrameResult.setVisible(true);
-                name1.setText(result.getString("username"));
-                bloodbankName1.setText(result.getString("bloodbank_name"));
-                dateTime1.setText(result.getString("time"));
+                name1.setText(result.getString("event_name"));
+                bloodbankName1.setText(result.getString("location"));
+                dateTime1.setText(result.getString("date_time"));
             } else {
                 JOptionPane.showMessageDialog(this, "Username not found. Please try again");
             }
@@ -1198,10 +958,11 @@ public class AdminAppointmentList extends javax.swing.JFrame {
     private javax.swing.JTextField TFSearch1;
     private javax.swing.JButton accept;
     private javax.swing.JPanel acceptPanel;
-    private javax.swing.JLabel bloodbankName;
+    private javax.swing.JLabel address;
     private javax.swing.JLabel bloodbankName1;
-    private javax.swing.JLabel date;
+    private javax.swing.JLabel dateTime;
     private javax.swing.JLabel dateTime1;
+    private javax.swing.JLabel eventName;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1211,8 +972,10 @@ public class AdminAppointmentList extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -1227,7 +990,6 @@ public class AdminAppointmentList extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1249,18 +1011,10 @@ public class AdminAppointmentList extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JLabel name;
     private javax.swing.JLabel name1;
-    private javax.swing.JLabel rejectBloodBankName;
     private javax.swing.JButton rejectBtn;
-    private javax.swing.JLabel rejectDate;
-    private javax.swing.JLabel rejectDate1;
-    private javax.swing.JLabel rejectName;
     private javax.swing.JPanel rejectPanel;
-    private javax.swing.JLabel rejectTime;
-    private javax.swing.JLabel rejectTime1;
     private javax.swing.JButton searchBtn;
     private javax.swing.JPanel testAccept1;
-    private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }

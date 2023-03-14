@@ -202,7 +202,7 @@ public class BloodDonationCampaignRegister extends javax.swing.JFrame {
         try {
             
             // Set up a connection to MSSQL
-            connection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
+            connection = DriverManager.getConnection(new DatabaseURL().getURL());
 
             // Prepare and execute a SQL query to insert the new user data into the table
             String query = "INSERT INTO Pending_BloodDonationCampaign (event_name, event_date, event_time, location, address, organizer_name, organizer_email, organizer_contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";

@@ -55,7 +55,12 @@ public class Register extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jLabel4.setText("Age");
 
-        bloodGroupCombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enter Blood Type", "A+" }));
+        bloodGroupCombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enter Blood Type", "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
+        bloodGroupCombobox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bloodGroupComboboxActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jLabel5.setText("Blood Group");
@@ -194,7 +199,7 @@ public class Register extends javax.swing.JFrame {
         try {
             
             // Set up a connection to MSSQL
-            connection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
+            connection = DriverManager.getConnection(new DatabaseURL().getURL());
 
             // Prepare and execute a SQL query to insert the new user data into the table
             String query = "INSERT INTO DonorTable (name, email, password, age, bloodGroup, gender) VALUES (?, ?, ?, ?, ?, ?)";
@@ -222,6 +227,10 @@ public class Register extends javax.swing.JFrame {
         }
     
     }//GEN-LAST:event_registerButtonActionPerformed
+
+    private void bloodGroupComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodGroupComboboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bloodGroupComboboxActionPerformed
 
     /**
      * @param args the command line arguments

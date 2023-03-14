@@ -35,20 +35,16 @@ public class PreviousAppointments extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
         time = new javax.swing.JLabel();
-        address = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         name1 = new javax.swing.JLabel();
         date1 = new javax.swing.JLabel();
         time1 = new javax.swing.JLabel();
-        address1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -228,10 +224,6 @@ public class PreviousAppointments extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(72, 72, 72));
         jLabel16.setText("Time");
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(72, 72, 72));
-        jLabel17.setText("Address");
-
         name.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
         name.setText("Hospital Taiping");
 
@@ -241,9 +233,6 @@ public class PreviousAppointments extends javax.swing.JFrame {
         time.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
         time.setText("2:00 PM - 5:00 PM");
 
-        address.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
-        address.setText("Tmn Tasik, 34000 Taiping, Perak");
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -251,7 +240,6 @@ public class PreviousAppointments extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel17)
                     .addComponent(jLabel14)
                     .addComponent(jLabel15)
                     .addComponent(jLabel16))
@@ -259,9 +247,8 @@ public class PreviousAppointments extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(date)
                     .addComponent(name)
-                    .addComponent(time)
-                    .addComponent(address))
-                .addContainerGap(11, Short.MAX_VALUE))
+                    .addComponent(time))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,11 +265,7 @@ public class PreviousAppointments extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(time))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel17)
-                    .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jPanel8.setBackground(new java.awt.Color(236, 231, 231));
@@ -299,10 +282,6 @@ public class PreviousAppointments extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(72, 72, 72));
         jLabel20.setText("Time");
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(72, 72, 72));
-        jLabel21.setText("Address");
-
         name1.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
         name1.setText("Hospital Putrajaya");
 
@@ -312,9 +291,6 @@ public class PreviousAppointments extends javax.swing.JFrame {
         time1.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
         time1.setText("9:00 AM - 12:00 PM");
 
-        address1.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
-        address1.setText("Presint 7, 62250 Putrajaya");
-
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -322,7 +298,6 @@ public class PreviousAppointments extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel21)
                     .addComponent(jLabel18)
                     .addComponent(jLabel19)
                     .addComponent(jLabel20))
@@ -330,8 +305,7 @@ public class PreviousAppointments extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(date1)
                     .addComponent(name1)
-                    .addComponent(time1)
-                    .addComponent(address1))
+                    .addComponent(time1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -349,11 +323,7 @@ public class PreviousAppointments extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(time1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(address1))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -375,7 +345,7 @@ public class PreviousAppointments extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,9 +358,9 @@ public class PreviousAppointments extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -463,8 +433,6 @@ public class PreviousAppointments extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel address;
-    private javax.swing.JLabel address1;
     private javax.swing.JLabel date;
     private javax.swing.JLabel date1;
     private javax.swing.JLabel jLabel1;
@@ -473,12 +441,10 @@ public class PreviousAppointments extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

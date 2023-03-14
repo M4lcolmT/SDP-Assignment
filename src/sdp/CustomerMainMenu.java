@@ -56,7 +56,7 @@ public class CustomerMainMenu extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Raleway ExtraBold", 1, 17)); // NOI18N
         jButton3.setForeground(new java.awt.Color(222, 10, 30));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/BloodCamp.png"))); // NOI18N
-        jButton3.setText("Blood Donation Campaign");
+        jButton3.setText("  Blood Donation Campaign");
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(222, 10, 30), 2));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +72,7 @@ public class CustomerMainMenu extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Raleway ExtraBold", 1, 17)); // NOI18N
         jButton2.setForeground(new java.awt.Color(222, 10, 30));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/arrow compatability.png"))); // NOI18N
-        jButton2.setText("Blood Compatability Chart");
+        jButton2.setText("  Blood Compatability Chart");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(222, 10, 30), 2));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +88,7 @@ public class CustomerMainMenu extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 17)); // NOI18N
         jButton1.setForeground(new java.awt.Color(222, 10, 30));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/bloodbank drop.png"))); // NOI18N
-        jButton1.setText("Blood Bank                                ");
+        jButton1.setText("  Blood Bank                        ");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(222, 10, 30), 2));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

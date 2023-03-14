@@ -538,6 +538,11 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("View Details");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -617,6 +622,11 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("View Details");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -674,6 +684,11 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("View Details");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jLabel40.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jLabel40.setText("Blood Donation Drive at Mid Valley");
@@ -761,6 +776,11 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("View Details");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -1061,7 +1081,7 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
         String getSearch = searchField.getText();
 
         try {
-            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            String url = new DatabaseURL().getURL();
 
             Connection connection = DriverManager.getConnection(url);
             String sql = "SELECT * FROM BloodDonationCampaign WHERE event_name=?";
@@ -1103,7 +1123,9 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel23MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        BloodCampaignDetails bloodCampaignDetails = new BloodCampaignDetails(appointment);
+        bloodCampaignDetails.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
@@ -1134,6 +1156,30 @@ public class BloodDonationCampaign extends javax.swing.JFrame {
     private void jPanel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel21MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel21MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        BloodCampaignDetails bloodCampaignDetails = new BloodCampaignDetails(appointment);
+        bloodCampaignDetails.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        BloodCampaignDetails bloodCampaignDetails = new BloodCampaignDetails(appointment);
+        bloodCampaignDetails.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        BloodCampaignDetails bloodCampaignDetails = new BloodCampaignDetails(appointment);
+        bloodCampaignDetails.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        BloodCampaignDetails bloodCampaignDetails = new BloodCampaignDetails(appointment);
+        bloodCampaignDetails.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame FrameResult;

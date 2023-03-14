@@ -138,7 +138,7 @@ public class CreateBloodBank extends javax.swing.JFrame {
             
         
         try {
-            connection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
+            connection = DriverManager.getConnection(new DatabaseURL().getURL());
         } catch (SQLException e) {
             return;
         }

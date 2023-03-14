@@ -78,7 +78,7 @@ public class RedeemRewards extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/mcd.png"))); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/mcd.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/mcd1.png"))); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Raleway ExtraBold", 0, 21)); // NOI18N
         jLabel10.setText("Rewards");

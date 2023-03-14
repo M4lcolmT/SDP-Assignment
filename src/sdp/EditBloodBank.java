@@ -45,7 +45,7 @@ public class EditBloodBank extends javax.swing.JFrame {
         String bloodBankName = bankName.getText();
         try {
             
-            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            String url = new DatabaseURL().getURL();
             
             connection = DriverManager.getConnection(url);
             String sql = "SELECT * FROM BloodBank_Blood_Availability WHERE bloodbank_name =?";
@@ -101,9 +101,11 @@ public class EditBloodBank extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Raleway ExtraBold", 1, 24)); // NOI18N
         jLabel5.setText("Blood Avaliability");
 
-        bankName.setFont(new java.awt.Font("Raleway ExtraBold", 0, 18)); // NOI18N
+        bankName.setFont(new java.awt.Font("Raleway ExtraBold", 1, 26)); // NOI18N
+        bankName.setForeground(new java.awt.Color(0, 0, 0));
         bankName.setText("Hospital Kuala Lumpur");
 
+        inventoryTable.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         inventoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -112,11 +114,16 @@ public class EditBloodBank extends javax.swing.JFrame {
                 "Type of Blood", "Units of Blood Avaliable"
             }
         ));
+        inventoryTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        inventoryTable.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane1.setViewportView(inventoryTable);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/delete.png"))); // NOI18N
 
-        jButton1.setText("Update");
+        jButton1.setBackground(new java.awt.Color(198, 44, 44));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Update Table");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -132,35 +139,34 @@ public class EditBloodBank extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(bankName)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel7))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bankName)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(49, 49, 49)
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel7))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jButton1)))
+                        .addGap(91, 91, 91)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(bankName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(47, 47, 47)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jButton1)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(bankName, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(103, 103, 103)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 23)); // NOI18N
@@ -223,7 +229,7 @@ public class EditBloodBank extends javax.swing.JFrame {
         String bloodBankName = bankName.getText();
 
         try {
-            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            String url = new DatabaseURL().getURL();
             connection = DriverManager.getConnection(url);
 
             String sql = "UPDATE BloodBank_Blood_Availability SET A_pos=?, A_neg=?, B_pos=?, B_neg=?, O_pos=?, O_neg=?, AB_pos=?, AB_neg=? WHERE bloodbank_name = ?";

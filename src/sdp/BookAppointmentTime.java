@@ -417,42 +417,28 @@ public class BookAppointmentTime extends javax.swing.JFrame {
         
         DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
         String appointmentDate = fmt.format(appointment.getAppointmentDate());
-        
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return;
-        }
+
+
         // Create a SQL INSERT statement to insert the date and time into the MSSQL database
         PreparedStatement stmt = null;
         try {
-            String sql = "INSERT INTO Pending_Appointment (username, bloodbank_name, date, time, address) VALUES (?,?,?,?,?)";
+            Connection conn = DriverManager.getConnection(new DatabaseURL().getURL());
+            String sql = "INSERT INTO Pending_Appointment (username, bloodbank_name, date, time) VALUES (?,?,?,?)";
             stmt = conn.prepareStatement(sql);
             
             stmt.setString(1, appointment.getUsername());
             stmt.setString(2, appointment.getBloodBank_Name());
             stmt.setString(3, appointmentDate);
             stmt.setString(4, setAppointmentTime);
-            stmt.setString(5, appointment.getBloodBank_Address());
             // Execute the SQL INSERT statement
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(this, "Your appointment is booked!");
+            
+            stmt.close();
+            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            // Close the JDBC connection
-            try {
-                if (stmt != null) {
-                    stmt.close();
-                }
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+
         }
         
         

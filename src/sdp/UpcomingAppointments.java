@@ -19,10 +19,10 @@ public class UpcomingAppointments extends javax.swing.JFrame {
     
     private void setAppointment() {
         try {
-            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            String url = new DatabaseURL().getURL();
 
             Connection connection = DriverManager.getConnection(url);
-            String sql = "SELECT * FROM BloodBank";
+            String sql = "SELECT * FROM Appointment";
 
             Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -32,11 +32,9 @@ public class UpcomingAppointments extends javax.swing.JFrame {
             while (rs.next()) {     
             for(int i = 1 ; i <= columnsNumber; i++){
 
-                  name.setText(rs.getString(1));
-                  date.setText(rs.getString(2));
-                  time.setText(rs.getString(3));
-                  address.setText(rs.getString(4));
-
+                  name.setText(rs.getString(2));
+                  date.setText(rs.getString(3));
+                  time.setText(rs.getString(4));
                 }
             }
 
@@ -64,17 +62,15 @@ public class UpcomingAppointments extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        upcomingLabel = new javax.swing.JLabel();
+        previousLabel = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
         time = new javax.swing.JLabel();
-        address = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -227,15 +223,15 @@ public class UpcomingAppointments extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/redline.png"))); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Raleway ExtraBold", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(195, 50, 50));
-        jLabel10.setText("Upcoming");
+        upcomingLabel.setFont(new java.awt.Font("Raleway ExtraBold", 0, 14)); // NOI18N
+        upcomingLabel.setForeground(new java.awt.Color(195, 50, 50));
+        upcomingLabel.setText("Upcoming");
 
-        jLabel11.setFont(new java.awt.Font("Raleway ExtraBold", 0, 14)); // NOI18N
-        jLabel11.setText("Previous");
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        previousLabel.setFont(new java.awt.Font("Raleway ExtraBold", 0, 14)); // NOI18N
+        previousLabel.setText("Previous");
+        previousLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
+                previousLabelMouseClicked(evt);
             }
         });
 
@@ -257,11 +253,6 @@ public class UpcomingAppointments extends javax.swing.JFrame {
         jLabel16.setText("Time");
         jPanel7.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 84, -1, -1));
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(72, 72, 72));
-        jLabel17.setText("Address");
-        jPanel7.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 117, -1, -1));
-
         name.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
         name.setText("jLabel12");
         jPanel7.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 18, -1, -1));
@@ -274,10 +265,6 @@ public class UpcomingAppointments extends javax.swing.JFrame {
         time.setText("jLabel18");
         jPanel7.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 84, -1, -1));
 
-        address.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        address.setText("jLabel19");
-        jPanel7.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 117, -1, -1));
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -287,9 +274,9 @@ public class UpcomingAppointments extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(65, 65, 65)
-                        .addComponent(jLabel10)
+                        .addComponent(upcomingLabel)
                         .addGap(104, 104, 104)
-                        .addComponent(jLabel11))
+                        .addComponent(previousLabel))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addComponent(jLabel9))
@@ -303,13 +290,13 @@ public class UpcomingAppointments extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11))
+                    .addComponent(upcomingLabel)
+                    .addComponent(previousLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 300, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -380,11 +367,11 @@ public class UpcomingAppointments extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jPanel5MouseClicked
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void previousLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_previousLabelMouseClicked
         PreviousAppointments newAppointment = new PreviousAppointments(appointment);
         newAppointment.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_previousLabelMouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         CustomerMainMenu newAppointment = new CustomerMainMenu(appointment);
@@ -393,15 +380,11 @@ public class UpcomingAppointments extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel address;
     private javax.swing.JLabel date;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -419,6 +402,8 @@ public class UpcomingAppointments extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel name;
+    private javax.swing.JLabel previousLabel;
     private javax.swing.JLabel time;
+    private javax.swing.JLabel upcomingLabel;
     // End of variables declaration//GEN-END:variables
 }

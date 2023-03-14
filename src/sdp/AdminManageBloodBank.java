@@ -462,7 +462,7 @@ public class AdminManageBloodBank extends javax.swing.JFrame {
         String getSearch = TFSearch.getText();
 
         try {
-            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            String url = new DatabaseURL().getURL();
 
             Connection connection = DriverManager.getConnection(url);
             String sql = "SELECT * FROM BloodBank WHERE BloodBank_name=?";

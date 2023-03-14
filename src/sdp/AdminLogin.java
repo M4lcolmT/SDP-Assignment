@@ -37,16 +37,16 @@ public class AdminLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Raleway ExtraBold", 1, 14)); // NOI18N
         jLabel2.setText("USERNAME");
 
-        jLabel3.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Raleway ExtraBold", 1, 14)); // NOI18N
         jLabel3.setText("PASSWORD");
 
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Raleway ExtraBold", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Log In");
+        jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -86,16 +86,16 @@ public class AdminLogin extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel7)
                 .addGap(36, 36, 36)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,7 +119,7 @@ public class AdminLogin extends javax.swing.JFrame {
         
         try {
             // Set up a connection to MSSQL
-            connection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false");
+            connection = DriverManager.getConnection(new DatabaseURL().getURL());
 
             // Prepare and execute a SQL query to check the username and password
             String query = "SELECT COUNT(*) FROM AdminDetails WHERE username = ? AND password = ?";

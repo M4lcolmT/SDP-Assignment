@@ -28,7 +28,6 @@ public class ViewUserList extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel15 = new javax.swing.JPanel();
-        BViewDetails = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         name = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
@@ -120,16 +119,6 @@ public class ViewUserList extends javax.swing.JFrame {
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
-        BViewDetails.setBackground(new java.awt.Color(222, 10, 30));
-        BViewDetails.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BViewDetails.setForeground(new java.awt.Color(255, 255, 255));
-        BViewDetails.setText("View Details");
-        BViewDetails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BViewDetailsActionPerformed(evt);
-            }
-        });
-
         jPanel10.setBackground(new java.awt.Color(245, 242, 242));
 
         name.setFont(new java.awt.Font("Raleway ExtraBold", 1, 15)); // NOI18N
@@ -214,22 +203,15 @@ public class ViewUserList extends javax.swing.JFrame {
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(BViewDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BViewDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 544, Short.MAX_VALUE))
+                .addGap(0, 608, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel15);
@@ -353,7 +335,7 @@ public class ViewUserList extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(245, 242, 242));
 
         jLabel11.setFont(new java.awt.Font("Raleway ExtraBold", 1, 15)); // NOI18N
-        jLabel11.setText("Dylan");
+        jLabel11.setText("Lee Wei Han");
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(108, 107, 107));
@@ -375,7 +357,7 @@ public class ViewUserList extends javax.swing.JFrame {
         jLabel16.setText("O+");
 
         jLabel17.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
-        jLabel17.setText("dylan123@gmail.com");
+        jLabel17.setText("weihan@gmail.com");
 
         jLabel18.setFont(new java.awt.Font("Raleway ExtraBold", 0, 13)); // NOI18N
         jLabel18.setText("19");
@@ -790,15 +772,11 @@ public class ViewUserList extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TFSearchActionPerformed
 
-    private void BViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BViewDetailsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BViewDetailsActionPerformed
-
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         String getSearch = TFSearch.getText();
 
         try {
-            String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+            String url = new DatabaseURL().getURL();
 
             Connection connection = DriverManager.getConnection(url);
             String sql = "SELECT * FROM CustomerDetails WHERE name=?";
@@ -847,7 +825,6 @@ public class ViewUserList extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BViewDetails;
     private javax.swing.JFrame FrameResult;
     private javax.swing.JTextField TFSearch;
     private javax.swing.JTextField TFSearch2;

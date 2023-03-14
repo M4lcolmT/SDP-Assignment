@@ -155,8 +155,14 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="bloodBankName">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Raleway ExtraBold" size="12" style="0"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -167,6 +173,9 @@
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Raleway ExtraBold" size="11" style="0"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -420,25 +429,22 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jSeparator2" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="38" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="scheduleAppointmentBtn" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="test" min="-2" pref="246" max="-2" attributes="0"/>
-                                              <Component id="test2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                      </Group>
+                                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="test" min="-2" pref="246" max="-2" attributes="0"/>
+                                      <Component id="test2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                                  <Component id="scheduleAppointmentBtn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -457,7 +463,7 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="scheduleAppointmentBtn" pref="45" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jSeparator2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -494,7 +500,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Raleway ExtraBold" size="12" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Hospital Seberang Jaya"/>
+                            <Property name="text" type="java.lang.String" value="Hospital Kuala Lumpur"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="test2">
@@ -502,7 +508,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Raleway ExtraBold" size="11" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Jln Tun Hussein Onn, Pusat Seberang Jaya"/>
+                            <Property name="text" type="java.lang.String" value="Wilayah Persekutuan Kuala Lumpur"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="scheduleAppointmentBtn">
@@ -576,8 +582,8 @@
                                       <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jButton3" pref="50" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Component id="jButton3" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jSeparator3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -589,7 +595,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Raleway ExtraBold" size="12" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Hospital Kuala Lumpur"/>
+                            <Property name="text" type="java.lang.String" value="Hospital Seberang Jaya"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel20">
@@ -622,7 +628,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Raleway ExtraBold" size="11" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Wilayah Persekutuan Kuala Lumpur"/>
+                            <Property name="text" type="java.lang.String" value="Jalan Tun Hussein Onn"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton3">
@@ -671,12 +677,12 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
                               <Component id="jSeparator4" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -692,9 +698,9 @@
                                       <Component id="bloodbankAddress" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace pref="10" max="32767" attributes="0"/>
                                   <Component id="jButton8" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jSeparator4" min="-2" pref="3" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -717,7 +723,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Raleway ExtraBold" size="11" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Wilayah Persekutuan Kuala Lumpur"/>
+                            <Property name="text" type="java.lang.String" value="Presint 7, 62250 Putrajaya"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="bloodbankName">
@@ -725,7 +731,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Raleway ExtraBold" size="12" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Hospital Kuala Lumpur"/>
+                            <Property name="text" type="java.lang.String" value="Hospital Putrajaya"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel31">
@@ -823,7 +829,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Raleway ExtraBold" size="12" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Hospital Kuala Lumpur"/>
+                            <Property name="text" type="java.lang.String" value="Hospital Raja Perempuan"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel38">
@@ -963,7 +969,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Raleway ExtraBold" size="12" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Hospital Kuala Lumpur"/>
+                            <Property name="text" type="java.lang.String" value="Hospital Kuala Terengganu"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel41">
@@ -1031,7 +1037,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="230" y="40" width="111" height="40"/>
+                          <AbsoluteConstraints x="240" y="40" width="111" height="40"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -1046,7 +1052,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="180" y="40" width="-1" height="40"/>
+                          <AbsoluteConstraints x="180" y="40" width="40" height="40"/>
                         </Constraint>
                       </Constraints>
                     </Component>

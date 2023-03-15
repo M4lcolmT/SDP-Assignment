@@ -9,10 +9,10 @@ public class ManageBloodDonationCampaign extends javax.swing.JFrame {
     
     public ManageBloodDonationCampaign() {
         initComponents();
-        setAppointment();
+        setBloodCamp();
     }
     
-    private void setAppointment() {
+    private void setBloodCamp() {
         try {
             String url = new DatabaseURL().getURL();
             

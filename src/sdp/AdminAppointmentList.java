@@ -911,7 +911,10 @@ public class AdminAppointmentList extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         acceptPanel.setVisible(true);
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to confirm this appointment?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, 
+                "Do you want to confirm this appointment?", 
+                "Confirm", JOptionPane.YES_NO_OPTION, 
+                JOptionPane.QUESTION_MESSAGE);
         if (response == JOptionPane.YES_OPTION) {
             JOptionPane.showMessageDialog(null,
                 "Appointment Successfully Confirmed!", "Exit",
@@ -959,7 +962,10 @@ public class AdminAppointmentList extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jPanel7.setVisible(true);
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to reject this appointment?", "Reject", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, 
+                "Do you want to reject this appointment?", 
+                "Reject", JOptionPane.YES_NO_OPTION, 
+                JOptionPane.QUESTION_MESSAGE);
         if (response == JOptionPane.YES_OPTION) {
             String username = rejectName.getText();
             String bloodbankname = rejectBloodBankName.getText();
@@ -967,16 +973,22 @@ public class AdminAppointmentList extends javax.swing.JFrame {
             String appointmentTime = rejectTime.getText();
             try {
                 Connection con = DriverManager.getConnection(new DatabaseURL().getURL());
-                PreparedStatement pst = con.prepareStatement("DELETE FROM Pending_Appointment WHERE username=? AND bloodbank_name=? AND date = ? AND time=?");
+                PreparedStatement pst = con.prepareStatement("DELETE FROM Pending_Appointment WHERE username=? "
+                        + "AND bloodbank_name=? AND date = ? AND time=?");
                 pst.setString(1, username);
                 pst.setString(2, bloodbankname);
                 pst.setString(3, appointmentDate);
                 pst.setString(4, appointmentTime);
                 pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Appointment Successfully Rejected", "Exit", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, 
+                        "Appointment Successfully Rejected", 
+                        "Exit", 
+                        JOptionPane.INFORMATION_MESSAGE);
                 jPanel7.setVisible(false);
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, 
+                        "Error: " + ex.getMessage(), "Error", 
+                        JOptionPane.ERROR_MESSAGE);
             }   
         }
         else if (response == JOptionPane.NO_OPTION)
@@ -1037,7 +1049,10 @@ public class AdminAppointmentList extends javax.swing.JFrame {
 
     private void rejectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectBtnActionPerformed
         rejectPanel.setVisible(true);
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to reject this appointment?", "Reject", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, 
+                "Do you want to reject this appointment?", 
+                "Reject", JOptionPane.YES_NO_OPTION, 
+                JOptionPane.QUESTION_MESSAGE);
         if (response == JOptionPane.YES_OPTION) {
             String username = rejectName.getText();
             String bloodbankname = rejectBloodBankName.getText();
@@ -1045,16 +1060,21 @@ public class AdminAppointmentList extends javax.swing.JFrame {
             String appointmentTime = rejectTime.getText();
             try {
                 Connection con = DriverManager.getConnection(new DatabaseURL().getURL());
-                PreparedStatement pst = con.prepareStatement("DELETE FROM Pending_Appointment WHERE username=? AND bloodbank_name=? AND date = ? AND time=?");
+                PreparedStatement pst = con.prepareStatement("DELETE FROM Pending_Appointment "
+                        + "WHERE username=? AND bloodbank_name=? AND date = ? AND time=?");
                 pst.setString(1, username);
                 pst.setString(2, bloodbankname);
                 pst.setString(3, appointmentDate);
                 pst.setString(4, appointmentTime);
                 pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Appointment Successfully Rejected", "Exit", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, 
+                        "Appointment Successfully Rejected", 
+                        "Exit", JOptionPane.INFORMATION_MESSAGE);
                 rejectPanel.setVisible(false);
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, 
+                        "Error: " + ex.getMessage(), 
+                        "Error", JOptionPane.ERROR_MESSAGE);
             }   
         }
         else if (response == JOptionPane.NO_OPTION)
@@ -1067,7 +1087,10 @@ public class AdminAppointmentList extends javax.swing.JFrame {
 
     private void acceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptActionPerformed
         acceptPanel.setVisible(true);
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to confirm this appointment?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, 
+                "Do you want to confirm this appointment?", 
+                "Confirm", JOptionPane.YES_NO_OPTION, 
+                JOptionPane.QUESTION_MESSAGE);
         if (response == JOptionPane.YES_OPTION) {
             JOptionPane.showMessageDialog(null,
                 "Appointment Successfully Confirmed!", "Exit",
@@ -1093,7 +1116,7 @@ public class AdminAppointmentList extends javax.swing.JFrame {
 
             // Check if the query was successful and print a message to the console
             if (rowsInserted > 0) {
-                System.out.println("New blood donation campaign inserted successfully.");
+                System.out.println("Appointment accepted successfully.");
             }
         } catch (SQLException e) {
             System.out.println("Error connecting to database: " + e.getMessage());

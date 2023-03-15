@@ -232,7 +232,9 @@ public class EditBloodBank extends javax.swing.JFrame {
             String url = new DatabaseURL().getURL();
             connection = DriverManager.getConnection(url);
 
-            String sql = "UPDATE BloodBank_Blood_Availability SET A_pos=?, A_neg=?, B_pos=?, B_neg=?, O_pos=?, O_neg=?, AB_pos=?, AB_neg=? WHERE bloodbank_name = ?";
+            String sql = "UPDATE BloodBank_Blood_Availability SET A_pos=?, A_neg=?, "
+                    + "B_pos=?, B_neg=?, O_pos=?, O_neg=?, "
+                    + "AB_pos=?, AB_neg=? WHERE bloodbank_name = ?";
 
             PreparedStatement statement = connection.prepareStatement(sql);
 
@@ -271,7 +273,6 @@ public class EditBloodBank extends javax.swing.JFrame {
                         throw new IllegalArgumentException("Invalid blood group: " + bloodGroup);
                 }
             }
-            
             // Set the last parameter (bloodbank_name) and execute the statement
             statement.setString(9, bloodBankName);
             statement.executeUpdate();

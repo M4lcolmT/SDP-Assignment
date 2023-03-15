@@ -1,11 +1,11 @@
 package sdp;
 
 
-public class AdminMainMenu extends javax.swing.JFrame {
+public class DataDashboard extends javax.swing.JFrame {
 
     BloodBank bloodbank;
     
-    public AdminMainMenu(BloodBank bloodbank) {
+    public DataDashboard(BloodBank bloodbank) {
         initComponents();
         this.bloodbank = bloodbank;
     }
@@ -15,32 +15,35 @@ public class AdminMainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        userListButton = new javax.swing.JButton();
-        dashBoardButton = new javax.swing.JButton();
-        bloodCampButton = new javax.swing.JButton();
-        bloodBankButton = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel9 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(198, 44, 44));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(null);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -52,35 +55,30 @@ public class AdminMainMenu extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jLabel5.setText("LOG OUT");
+        jLabel5.setText("PROFILE");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/profile.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/profile.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel5)
-                .addGap(0, 63, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(21, 21, 21))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5))
         );
 
@@ -126,11 +124,10 @@ public class AdminMainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(222, 10, 30));
-        jLabel6.setText("HOME");
+        jLabel3.setFont(new java.awt.Font("Raleway ExtraBold", 0, 12)); // NOI18N
+        jLabel3.setText("HOME");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/redhome.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/home.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -140,19 +137,19 @@ public class AdminMainMenu extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jLabel11))
+                        .addComponent(jLabel6))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jLabel6)))
+                        .addComponent(jLabel3)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel11)
+                .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6))
+                .addComponent(jLabel3))
         );
 
         jSeparator1.setBackground(new java.awt.Color(255, 153, 153));
@@ -167,16 +164,16 @@ public class AdminMainMenu extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(29, 29, 29)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(26, 26, 26)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(7, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -186,168 +183,141 @@ public class AdminMainMenu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel3);
-        jPanel3.setBounds(0, 550, 380, 81);
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/1.png"))); // NOI18N
+        jPanel9.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/2.png"))); // NOI18N
+        jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 350, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/3.png"))); // NOI18N
+        jPanel9.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1340, 350, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/4.png"))); // NOI18N
+        jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2020, 350, -1));
+
+        jScrollPane2.setViewportView(jPanel9);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/iPhone Status bar.png"))); // NOI18N
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(0, 0, 363, 20);
 
-        jLabel3.setFont(new java.awt.Font("Raleway ExtraBold", 1, 26)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Admin Page");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(110, 20, 170, 43);
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/adminmainmenu.png"))); // NOI18N
-        jPanel2.add(jLabel10);
-        jLabel10.setBounds(70, 70, 250, 200);
-
-        userListButton.setBackground(new java.awt.Color(255, 255, 254));
-        userListButton.setFont(new java.awt.Font("Raleway ExtraBold", 1, 18)); // NOI18N
-        userListButton.setForeground(new java.awt.Color(222, 10, 30));
-        userListButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/adminuserlist.png"))); // NOI18N
-        userListButton.setText("  View Users List          ");
-        userListButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(222, 10, 30), 2));
-        userListButton.setPreferredSize(new java.awt.Dimension(266, 60));
-        userListButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userListButtonActionPerformed(evt);
+        jLabel2.setFont(new java.awt.Font("Raleway ExtraBold", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/arrow return.png"))); // NOI18N
+        jLabel2.setText("Data Dashboard");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
             }
         });
-        jPanel2.add(userListButton);
-        userListButton.setBounds(40, 290, 300, 50);
 
-        dashBoardButton.setBackground(new java.awt.Color(255, 255, 254));
-        dashBoardButton.setFont(new java.awt.Font("Raleway ExtraBold", 1, 18)); // NOI18N
-        dashBoardButton.setForeground(new java.awt.Color(222, 10, 30));
-        dashBoardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/admindashboard.png"))); // NOI18N
-        dashBoardButton.setText("  Data Dashboard         ");
-        dashBoardButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(222, 10, 30), 2));
-        dashBoardButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dashBoardButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(dashBoardButton);
-        dashBoardButton.setBounds(41, 500, 300, 50);
-
-        bloodCampButton.setBackground(new java.awt.Color(255, 255, 255));
-        bloodCampButton.setFont(new java.awt.Font("Raleway ExtraBold", 1, 18)); // NOI18N
-        bloodCampButton.setForeground(new java.awt.Color(222, 10, 30));
-        bloodCampButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/BloodCamp.png"))); // NOI18N
-        bloodCampButton.setText("  Manage Blood Camp  ");
-        bloodCampButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(222, 10, 30), 2));
-        bloodCampButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bloodCampButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bloodCampButton);
-        bloodCampButton.setBounds(40, 360, 300, 50);
-
-        bloodBankButton.setBackground(new java.awt.Color(255, 255, 254));
-        bloodBankButton.setFont(new java.awt.Font("Raleway ExtraBold", 1, 18)); // NOI18N
-        bloodBankButton.setForeground(new java.awt.Color(222, 10, 30));
-        bloodBankButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/adminbloodbank.png"))); // NOI18N
-        bloodBankButton.setText("   Manage Blood Bank");
-        bloodBankButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(222, 10, 30), 2));
-        bloodBankButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bloodBankButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bloodBankButton);
-        bloodBankButton.setBounds(40, 430, 300, 50);
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/Ellipse 24admin.png"))); // NOI18N
-        jPanel2.add(jLabel9);
-        jLabel9.setBounds(0, 0, 375, 369);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sdp/Images/Ellipse 24.png"))); // NOI18N
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(0, 0, 375, 320);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bloodBankButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodBankButtonActionPerformed
-        AdminManageBloodBank manageBloodBank = new AdminManageBloodBank(bloodbank);
-        manageBloodBank.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_bloodBankButtonActionPerformed
-
-    private void userListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userListButtonActionPerformed
-        ViewUserList userList = new ViewUserList(bloodbank);
-        userList.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_userListButtonActionPerformed
-
-    private void dashBoardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashBoardButtonActionPerformed
-        new DataDashboard(bloodbank).setVisible(true);
-        dispose();
-    }//GEN-LAST:event_dashBoardButtonActionPerformed
-
-    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
-        AdminAppointmentList appList = new AdminAppointmentList(bloodbank);
-        appList.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jPanel5MouseClicked
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
         
     }//GEN-LAST:event_jPanel6MouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        new MainLogin().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jPanel4MouseClicked
 
-    private void bloodCampButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodCampButtonActionPerformed
-        ManageBloodDonationCampaign manageBloodCamp = new ManageBloodDonationCampaign();
-        manageBloodCamp.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_bloodCampButtonActionPerformed
+    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
+        
+    }//GEN-LAST:event_jPanel5MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new MainLogin().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        new AdminMainMenu(bloodbank).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bloodBankButton;
-    private javax.swing.JButton bloodCampButton;
-    private javax.swing.JButton dashBoardButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JButton userListButton;
     // End of variables declaration//GEN-END:variables
 }

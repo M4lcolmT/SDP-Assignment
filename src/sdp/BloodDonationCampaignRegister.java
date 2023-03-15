@@ -205,7 +205,9 @@ public class BloodDonationCampaignRegister extends javax.swing.JFrame {
             connection = DriverManager.getConnection(new DatabaseURL().getURL());
 
             // Prepare and execute a SQL query to insert the new user data into the table
-            String query = "INSERT INTO Pending_BloodDonationCampaign (event_name, event_date, event_time, location, address, organizer_name, organizer_email, organizer_contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Pending_BloodDonationCampaign (event_name, event_date, event_time,"
+                    + "location, address, organizer_name, "
+                    + "organizer_email, organizer_contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, eventName);
             statement.setString(2, eventDate);

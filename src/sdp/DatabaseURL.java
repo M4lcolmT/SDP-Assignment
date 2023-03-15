@@ -6,7 +6,7 @@ package sdp;
 
 
 public class DatabaseURL {
-    private String url = "jdbc:sqlserver://LAPTOP-8VG4L8ND;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
+    private String url = "jdbc:sqlserver://DESKTOP-8G3PGVH\\SQLEXPRESS;databaseName=SDPAssignment;user=sa;password=password;encrypt=false";
     
     public DatabaseURL(){
         this.url = url;
